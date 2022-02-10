@@ -1,3 +1,5 @@
+/* Este programa cria a imagem de um boneco em que a cabeca e uma elipse, os olhos circulos, e cor da liha preta.*/
+/* OBS. TENTEI  ALTERAR A COR DE FUNDO MAS NAO CONSEGUI, GOSTARIA DE SABER QUAL FOI O MEU ERRO*/
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
