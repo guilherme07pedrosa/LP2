@@ -14,6 +14,6 @@ class Oval {
 	this.h=h;
 	}
 	void print () {
-		System.out.format("elipse de tamanho (%d,%d) na posicao (%d,%d).\n", this.w, this.h, this.x, this.y);
+		System.out.format("elipse com foco nos pontos (%d,%d), altura(%d) e largura (%d)  \n", this.w, this.h, this.x, this.y);
 	}
 }
