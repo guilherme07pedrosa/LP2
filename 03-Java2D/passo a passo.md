@@ -1,4 +1,4 @@
-1	public class RectApp {
+1	public class RectApp {/*definida a classe principal*/
 2	    public static void main (String[] args) {
 3	        Rect r1 = new Rect(1,1, 10,10);
 4	        r1.print();
@@ -17,4 +17,4 @@
 17	        System.out.format("Retangulo de tamanho (%d,%d) na posicao (%d,%d).\n",
 18	            this.w, this.h, this.x, this.y);
 19	    }
-20	}
+20
