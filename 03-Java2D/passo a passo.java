@@ -7,7 +7,7 @@ public class RectApp {/*definição classe RecApp*/
 class Rect {
     int x, y;
     int w, h;
-    Rect (int x, int y, int w, int h) {/*Define  as instâncias do objeto Rect*/
+    Rect (int x, int y, int w, int h) {/*Construtor da classe - Define  as instâncias do objeto Rect*/
         this.x = x;/*atribui o valor 1 a x*/
         this.y = y;/*atribui o valor 1 a y*/
         this.w = w;/*atribui o valor 10 a w*/
