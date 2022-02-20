@@ -62,14 +62,14 @@ class Rect {
     void paint (Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setColor(new Color(255,0,0));
-        g2d.fillOval(50,50, 50,50);
-        g2d.drawOval(this.x,this.y, this.w,this.h);
+        g2d.fillRect(50,50, 50,50);
+        g2d.drawRect(this.x,this.y, this.w,this.h);
         g2d.setColor(new Color(0,255,0));
-        g2d.fillOval(200,100, 100,70);
-        g2d.drawOval(this.x,this.y, this.w,this.h);
+        g2d.fillRect(200,100, 100,70);
+        g2d.drawRect(this.x,this.y, this.w,this.h);
         g2d.setColor(new Color(0,0,0));
-        g2d.fillOval(100,300, 120,30);
-        g2d.drawOval(this.x,this.y, this.w,this.h);
+        g2d.fillRect(100,300, 120,30);
+        g2d.drawRect(this.x,this.y, this.w,this.h);
         
         
        
