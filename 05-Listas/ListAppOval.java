@@ -1,4 +1,3 @@
-
 /**
  * Escreva uma descrição da classe ListAppOval aqui.
  * 
@@ -35,10 +34,10 @@ class ListFrame extends JFrame {
             new KeyAdapter() {
                 public void keyPressed (KeyEvent evt) {
                     if (evt.getKeyChar() == 'e') {
-                        int x = rand.nextInt(350);
-                        int y = rand.nextInt(350);
-                        int w = rand.nextInt(50);
-                        int h = rand.nextInt(50);
+                        int x = rand.nextInt(1000);
+                        int y = rand.nextInt(1000);
+                        int w = rand.nextInt(100);
+                        int h = rand.nextInt(200);
                         os.add(new Oval(x,y, w,h));
                         repaint();  // outer.repaint()
                     }
@@ -76,6 +75,7 @@ class Oval {
 
     void paint (Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
+        g2d.fillOval(this.x,this.y, this.w,this.h);
         g2d.drawOval(this.x,this.y, this.w,this.h);
     }
 }
