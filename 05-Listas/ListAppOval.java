@@ -43,22 +43,6 @@ class ListFrame extends JFrame {
                         repaint();  // outer.repaint()
                     
                     }
-                    else if  (evt.getKeyChar() == 'o') {
-                        int x = rand.nextInt(350);
-                        int y = rand.nextInt(350);
-                        int w = rand.nextInt(100);
-                        int h = rand.nextInt(200);
-                        os.add(new Oval(x,y, w,h));
-                        repaint();  // outer.repaint()
-                    
-                    }
-                
-                
-                
-                
-                
-                
-                
                 }
             }
         );
