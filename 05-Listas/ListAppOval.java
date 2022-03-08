@@ -19,6 +19,7 @@ class ListAppOval {
 
 class ListFrame extends JFrame {
     ArrayList<Oval> os = new ArrayList<Oval>();
+   
     Random rand = new Random();
 
     ListFrame () {
@@ -40,7 +41,24 @@ class ListFrame extends JFrame {
                         int h = rand.nextInt(200);
                         os.add(new Oval(x,y, w,h));
                         repaint();  // outer.repaint()
+                    
                     }
+                    else if  (evt.getKeyChar() == 'o') {
+                        int x = rand.nextInt(350);
+                        int y = rand.nextInt(350);
+                        int w = rand.nextInt(100);
+                        int h = rand.nextInt(200);
+                        os.add(new Oval(x,y, w,h));
+                        repaint();  // outer.repaint()
+                    
+                    }
+                
+                
+                
+                
+                
+                
+                
                 }
             }
         );
@@ -53,7 +71,12 @@ class ListFrame extends JFrame {
         super.paint(g);
         for (Oval o: this.os) {
             o.paint(g);
-        }
+        };
+        
+        
+        
+        
+        
     }
 }
 
@@ -76,6 +99,7 @@ class Oval {
     void paint (Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         g2d.fillOval(this.x,this.y, this.w,this.h);
+        g2d.setColor(new Color(0,255,0));
         g2d.drawOval(this.x,this.y, this.w,this.h);
     }
 }
