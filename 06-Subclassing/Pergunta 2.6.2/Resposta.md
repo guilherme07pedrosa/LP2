@@ -17,6 +17,6 @@ Ao se cadstrar os objetos que podem ser "Students" ou "Staff" a s "Database" vai
             System.out.println(i.next());
         }
         
-   Observe que na linha 13 não há a especificação se o objeto a ser impresso na tela é um "Student" ou "Staf" o método ja "sabe" trata-se de um "Staf" ou um "Student". 
+   Observe que na linha 13 não há a especificação se o objeto a ser mostrado na bancada de objetos  é um "Student" ou "Staf" o método ja "sabe" se este objeto é um  "Staf" ou um "Student". 
    Esse é um exemplo do Despacho Dinâmico. 
    Os códigos e a UML estão mostrados na resposta. 
