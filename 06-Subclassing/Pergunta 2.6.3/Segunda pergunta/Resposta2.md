@@ -1,1 +1,1 @@
-xxx
+Adicione um método construtor à classe Figure.
