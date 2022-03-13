@@ -1,3 +1,3 @@
 - Adicione um método construtor à classe Figure.
 - Use o construtor `super()` nos construtores das subclasses.
-- R. Para essa parte foi necessário excluir o Triângulo da classe abstrata de Figuras, i.é, foi necessário um novo array para esta Figura.  Segue aa UML's do projeto, os códigos das Figuras na pasta Package e um arquivo PNG da execução do programa
+- R. Para essa parte foi necessário excluir o Triângulo da classe abstrata de Figuras pois ao se tentar inserir um método contrutor na classe Figure que englobasse também Triângulos aparecia a mensagem de erro devido a incompatibilidade nos argumentos das funções. Foi necessário um novo array para esta Figura.  Segue aa UML's do projeto, os códigos das Figuras na pasta Package e um arquivo PNG da execução do progrma. 
