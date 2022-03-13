@@ -26,7 +26,7 @@ typedef struct {
 
 void rect_print (Rect* this) {
     Figure* sup = (Figure*) this;
-    printf("Retangulo de altura e largura (%d,%d) na posicao (%d,%d).\n",
+    printf("Retangulo de altura e largura (%d,%d) e as diagonais se cruzam no ponto (%d,%d) .\n",
            this->w, this->h, sup->x, sup->y);
 }
 
@@ -49,7 +49,7 @@ typedef struct {
 
 void Ellipse_print (Ellipse* this) {
     Figure* sup = (Figure*) this;
-    printf("Elipse de altura e largura (%d,%d) na posicao (%d,%d).\n",
+    printf("Elipse de altura e largura (%d,%d) e centro no ponto (%d,%d).\n",
            this->w, this->h, sup->x, sup->y);
 }
 
