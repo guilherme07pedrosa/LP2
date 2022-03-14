@@ -1,0 +1,1 @@
+As Figuras mais complexas da questao passada sao o Triangulo e a Elipse, para o exercicio nao ficar igual ao do professor vou utilzar como referencia a resposta dada na questao 1.3.1 - Um Trianguloe um Hexagono
