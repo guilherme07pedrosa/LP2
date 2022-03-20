@@ -1,5 +1,8 @@
 MANUAL DE INSTRUÇÕES DO SISTEMA
 
 1) LISTA DAS FIGURAS ATIVAS
-2) LISTENERS DO MOUSE E TECLADO
-3) FIGURAS EM FOCO
+As figuras ativas descritas no projeto. 
+3) LISTENERS DO MOUSE E TECLADO
+Aqui será explicado como será os listener do programa, que teclas, que botão do mouse, etc. 
+5) FIGURAS EM FOCO
+Ainda a ser explicado
