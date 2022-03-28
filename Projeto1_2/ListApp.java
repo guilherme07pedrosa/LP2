@@ -28,6 +28,37 @@ class ListFrame extends JFrame {
                 }
             }
         );
+       
+        /*Listener para o foco do mouse*/
+       this.addMouseListener (
+            new MouseAdapter() {
+                public void mousePressed (MouseEvent evt) {
+                    focused=null;
+                    mouse = evt.getPoint();
+                    int x = evt.getX();
+                    int y = evt.getY();
+                    for (Figure fig: figs) {
+                        if (fig.clicked(x,y)) {
+                            System.out.println("teste ok.");
+                            focused = figs.get(i);
+                        }
+                    }
+
+                }
+            }
+            );
+        /*Listener para arrastar figuras*/
+        this.addMouseMotionListener( 
+            new MouseAdapter() {
+                public void mouseDragged (MouseEvent evt) { 
+                          focused.drag(evt.getX() - mouse.x, evt.getY() - mouse.y);
+                          mouse = getMousePosition();
+                          repaint();
+                        
+                    }
+                }
+            );
+        
         
         this.addKeyListener (
             new KeyAdapter() {
@@ -80,16 +111,7 @@ class ListFrame extends JFrame {
     
         );
           
-        this.addMouseMotionListener( 
-            new MouseAdapter() {
-                public void mouseDragged (MouseEvent evt) { 
-                          focused.drag(evt.getX() - mouse.x, evt.getY() - mouse.y);
-                          mouse = getMousePosition();
-                          repaint();
-                        
-                    }
-                }
-            );
+        
         
             
 
