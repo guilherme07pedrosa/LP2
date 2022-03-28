@@ -14,17 +14,17 @@ public class Triangulo extends Figure {
 
     public Triangulo (int x, int y, int w,int h) {
         super(x,y,w,h);
-        /*a= new int[] {x,x+w/2,x-w/2};
-         b= new int[]{y,y+h,y+h};*/         
+            a= new int[] {x,x+w/2,x-w/2};
+            b= new int[]{y,y+h,y+h};        
     }
-   /*
+   
     public void drag (int dx, int dy) {
         this.x += dx;
         this.y += dy;
         a= new int[] {x,x+w/2,x-w/2};
         b= new int[]{y,y+h,y+h};
         
-    }*/
+    }
 
 
     
