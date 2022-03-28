@@ -1,0 +1,7 @@
+MANUAL DE INSTRUÇÕES DO SISTEMA
+
+
+Para criar uma elipse - tecle "e"
+Para criar um tiângulo - tecle "t"
+Para criar uma reta - tecle "l"
+Para deletar a última figura - tecle "d"
