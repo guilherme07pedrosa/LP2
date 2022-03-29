@@ -19,6 +19,7 @@ class ListFrame extends JFrame {
     Figure focused = null;
     Point mouse=null;
     Point position;
+    boolean mouse_clicked;
 
     ListFrame () {
         this.addWindowListener (
@@ -29,24 +30,26 @@ class ListFrame extends JFrame {
             }
         );
        
-        /*Listener para o foco do mouse*/
+        /*Listener para o foco do mouse- a figura será criada onde o mouse estiver clicado*/
        this.addMouseListener (
             new MouseAdapter() {
                 public void mousePressed (MouseEvent evt) {
                     focused=null;
                     mouse = evt.getPoint();
+                   // mouse_clicked=true;
                     int x = evt.getX();
                     int y = evt.getY();
                     for (Figure fig: figs) {
                         if (fig.clicked(x,y)) {
                             System.out.println("teste ok.");
-                            focused = figs.get(i);
-                        }
+                            focused = figs.get(i);}
+                         
                     }
 
                 }
             }
             );
+             
         /*Listener para arrastar figuras*/
         this.addMouseMotionListener( 
             new MouseAdapter() {
@@ -54,17 +57,16 @@ class ListFrame extends JFrame {
                           focused.drag(evt.getX() - mouse.x, evt.getY() - mouse.y);
                           mouse = getMousePosition();
                           repaint();
-                        
+                          
                     }
                 }
             );
         
-        
         this.addKeyListener (
             new KeyAdapter() {
                 public void keyPressed (KeyEvent evt) {
-                    int x = 70;
-                    int y = 80;
+                    int x = mouse.x;
+                    int y = mouse.y;
                     int w = 90;
                     int h = 55;
                     
@@ -89,48 +91,12 @@ class ListFrame extends JFrame {
                 }
             }
             );
-            
-            
-
-            this.addMouseListener (
-            new MouseAdapter() {
-                public void mousePressed (MouseEvent evt) {
-                    focused=null;
-                    mouse = evt.getPoint();
-                    int x = evt.getX();
-                    int y = evt.getY();
-                    for (Figure fig: figs) {
-                        if (fig.clicked(x,y)) {
-                            System.out.println("teste ok.");
-                            focused = figs.get(i);
-                        }
-                    }
-
-                }
-            }
-    
-        );
-          
-        
-        
-            
-
+                    
         this.setTitle("Lista de Figuras");
         this.setSize(350, 350);
     }
 
     
-    public void wait(int milliseconds)
-    {
-        try
-        {
-            Thread.sleep(milliseconds);
-        } 
-        catch (Exception e)
-        {
-            
-        }
-    }
     public void paint (Graphics g) {
         super.paint(g);
         for (Figure fig: this.figs) {
