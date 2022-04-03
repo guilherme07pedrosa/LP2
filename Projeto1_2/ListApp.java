@@ -41,8 +41,8 @@ class ListFrame extends JFrame {
                     int y = evt.getY();
                     for (Figure fig: figs) {
                         if (fig.clicked(x,y)) {
-                            System.out.println("teste ok.");
-                            focused = figs.get(i);}
+                            //System.out.println("teste ok.");
+                            focused = fig;}
                          
                     }
 
@@ -67,8 +67,8 @@ class ListFrame extends JFrame {
                 public void keyPressed (KeyEvent evt) {
                     int x = mouse.x;
                     int y = mouse.y;
-                    int w = 90;
-                    int h = 55;
+                    int w = 80;
+                    int h = 60;
                     
                     
                     if (evt.getKeyChar() == 'r') {
@@ -84,6 +84,10 @@ class ListFrame extends JFrame {
                     else if (evt.getKeyChar() == 't') {
                         figs.add(new Triangulo(x,y, w,h));
                     }
+                    else if (evt.getKeyChar() == 'c') {
+                        figs.add(new Circulo(x,y, w,h));
+                    }
+                    
                     else if (evt.getKeyChar() == 'd') {
                         figs.remove(i);
                     }
