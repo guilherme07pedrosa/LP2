@@ -1,7 +1,11 @@
 MANUAL DE INSTRUÇÕES DO SISTEMA
 
+Posicione o mouse sobre o Frame e clique na tela abaixo para criação da Figura.
 
 Para criar uma elipse - tecle "e"
 Para criar um tiângulo - tecle "t"
-Para criar uma reta - tecle "l"
+Para criar uma retangulo - tecle "r"
+Para criar um círculo  - tecle "c"
 Para deletar a última figura - tecle "d"
+
+Ao clicar o mouse em cima da figura criada esta pode ser movimentar ao longo do Frame. 
