@@ -32,6 +32,8 @@
    Defini no meu programa   UMA ARRAY_LIST_motorista(Lista estática) com  todas as carteiras de motoristas 
    cadatradas
    
+   
+   
    2) Fuuncionários e estudantes não motoristas. Para os funcionários será utilizada 
    a carteira funcional    que será entregue a todos com QR code e para estudantes 
    a carteira de estuadante.
@@ -44,11 +46,60 @@
    4) Por fim para todos os pedrestes não motoristas a entrada será mediante um cartão a ser entregue
    na entrada. Para esse casos criei uma LINKED_LIST_nâo_motorista(lista dinâmica) 
    
+  
+   Por fim juntei todas as classes represetadas por listas estáticas em uma única superclasse, 
+   denomindada ArrayList e todas as classes representadas por listas dinâmicas em uma
+   única superclasse denominada LinkedLista - Para estas duas criei uma interface denominada List.
    
-   O progarama ficou com 4 
+   Exemplo de código (só vou fazer o primeiro caso)
+   
+   
+   public class UERJ_motorista extends Motorista
+    public  UERJ_motorista (int x){
+        super(x);
+    }
+   
+   
+   public abstract class Motorista implements IPode_entrar {
+    public int x;
+    public boolean cadastrado (int x) {
+        return (True); (verifica se esta cadastrado)
+    }
+    
+    public interface IPode_entrar {
+    public boolean cadastrado (int x);
+   
+   }
+   ############################################################################################################################
+   Exemplo 2 - Sistema bancario. 
+   Fui contratado para criar em Java programa para controle de um banco.
+   Esse será assim definido:
+   classes: conta_corrente, conta_salario e poupança. 
+  
+  superclasse: conta
+  
+  public class Conta extends conta_corrente(float x(){
+   
+   public void saque(float saque){
+   float saque;
+   this.conta = this.conta -saque;
+   
+   }- sacar um valor
    
    
    
+   public void depositar (float deposito) {- depositar um valor
+    float deposito;
+    this.conta = this.conta +deposito;
+  }
+  
+  public abstrat class Conta implements iBanco{
+   public void saque(float saque);
+  public void depositar (float deposito);
+  }
+  
+  }
+  
    
    
    
