@@ -28,5 +28,7 @@ public class Circulo extends Figure {
         g2d.drawOval(this.x,this.y, this.w,this.w);
         g2d.setColor(this.Background);
         g2d.fillOval(this.x,this.y, this.w,this.w);
+        g2d.setColor(new Color(255,0,0));
+        //g2d.fillOval(this.x,this.y, 10,10);
         }
     }
