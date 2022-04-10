@@ -5,12 +5,20 @@ Posicione o mouse sobre o Frame e clique na tela abaixo para criação da Figura
 OBS:
 1)O sistema não aceita teclas maiúsculas
 2)O triângulo ser clicado um pouco deslocado do centro para esquerda e para baixo. 
+3) A Figura criada onde o mouse estiver no Frame
+4) Para funcionar o resize, isto é, o redimesionamento das Figuras o mouse deve ser clidado na Figura.
+5) Se uma Figura se sobrepor a outra, vai a que está "em cima" permanecerá com a cor inalterada a que está "em baixo" ficara com o efeito de uma sombra em sua cor. 
+6) Cada figura possui duas cores disponívsis neste programa que se distinguem pelo clique das letras maíusculas ou minúsculas. 
 
-Para criar uma elipse - tecle "e"
-Para criar um tiângulo - tecle "t"
-Para criar uma retangulo - tecle "r"
-Para criar um círculo  - tecle "c"
-Para deletar a última figura - tecle "d"
+Para criar uma elipse da cor 1- tecle "e"
+Para criar uma elipse da cor 2- tecle "E"
+Para criar um tiângulo da cor 1 - tecle "t"
+Para criar um tiângulo da cor 2 - tecle "T"
+Para criar uma retangulo da cor 1- tecle "r"
+Para criar uma retangulo da cor 2- tecle "R"
+Para criar um círculo da cor 1 - tecle "c"
+Para criar um círculo da cor 2 - tecle "C"
+Para deletar a última figura - tecle a tecla "Delete"
 Para arrastar uma figura clique sobre esta
 Para aumentar o tamanho clique na tecla  "PgUp" (seta para cima)
 Para diminuir o tamanho clique na tecla "PgDn" (seta para baixo)
