@@ -31,5 +31,7 @@ public class Ellipse extends Figure {
         g2d.draw(new Ellipse2D.Double(this.x,this.y, this.w,this.h));
         g2d.setColor(this.Background);
         g2d.fill(new Ellipse2D.Double(this.x,this.y, this.w,this.h));
+        g2d.setColor(new Color(255,0,0));
+        //g2d.fillOval(this.x,this.y, 10,10);
         }
     }
