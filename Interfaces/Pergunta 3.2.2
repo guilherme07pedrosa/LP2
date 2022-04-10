@@ -4,10 +4,24 @@ Pergunta: Como o conceito de “interfaces” se relaciona com  “duck typing�
     Respota da Questão (2.4.1)
     
     O "duck typing" se relaciona a termos uma lista com tipagem diferentes (subtipagem) desde que os elementos desta lista tenha métodos semelhantes:
-   "Em outras palavras, não verifique se ele É um pato: verifique se ele GRASNA como um pato, ANDA como um pato, etc, etc, dependendo exatamente de qual subconjunto de       comportamento semelhante a um pato você precisa para jogar com seus jogos de linguagem."
-    Como descrito na questão 2.4.1, o conceito tipo pato, consiste em a partir de características pré-definidas considerar subclasses de um outra classe. O conceito yipo     pato, agrupa na classe "pato" prorpiedades como por exemplo 
+   "Em outras palavras, não verifique se ele É um pato: verifique se ele GRASNA como um pato, ANDA como um pato, etc, etc, dependendo exatamente de qual 
+   subconjunto de  comportamento semelhante a um pato você precisa para jogar com seus jogos de linguagem."
+    Como descrito na questão 2.4.1, o conceito tipo pato, consiste em a partir de características pré-definidas considerar 
+    subclasses de um outra classe. O conceito yipo     pato, agrupa na classe "pato" prorpiedades como por exemplo 
     
-    Esse conceito foi utilizado no Projeto 1/2  agrupando propriedades comuns na classe abstrata "Figures" e contruìndo  a partir de uma única lista "Figuras" a criação     de Retângulos, Elipses, Triângulos e Circulos, bem como a possibilidade de mover essa Figuras e redimensiona-las  ao longo do Frame. Essa propriedade de       agrupar proriedades de objetos diferentes e implementar métodos a partir da classe abstrata da-se o nome de Dispacho Dinâmico. O conceito de  tipagem pato consiste em agrupar  objetos em subclasses  partir de suas características semelhantes a uma superclasse e com isso implementar o Despacho Dinâmico.
+    Esse conceito foi utilizado no Projeto 1/2  agrupando propriedades comuns na classe abstrata "Figures" e contruìndo 
+    a partir de uma única lista "Figuras" a criação     de Retângulos, Elipses, Triângulos e Circulos, bem como a possibilidade 
+    de mover essa Figuras e redimensiona-las  ao longo do Frame. Essa propriedade de       agrupar proriedades de objetos 
+    diferentes e implementar métodos a partir da classe abstrata da-se o nome de Dispacho Dinâmico. O conceito de  
+    tipagem pato consiste em agrupar  objetos em subclasses  partir de suas características semelhantes a uma superclasse e 
+    com isso implementar o Despacho Dinâmico.
     
-    Ao observar o código do exemplo interfaces no diretório do professos nota-se o seguinte: São criadas a partir da superclasse "Figuras" as Elipses e os             Retângulos e um código de intefaces separado para que ao clicar dentro de qualuqer figura no Frame, seja imnpresso a palavra "clicked". Observa-se  que a partir de uma     proproidade definida, estamos implementando dinâmicamante a impressão "Clicked". Em resumo a tipagem pato permite utilizar as interfaces de forma dinâmica. No           exemplo citado tal ação não se mostrou claramamnte necessária, pois não havia mais de uma classe abstrata, mas no mesmo exemplo, poderíamos querer que a impressão       "clicked" ocorresse ao clicarmos em algo que não fosse "Figures", como por exemplo "Botões" estariamos utilizando o conceito de tipagem pato devido a propriedade "ser clicado" e com a interface implementar o  despacho dinâmico para essa ação. 
+    Ao observar o código do exemplo interfaces no diretório do professos nota-se o seguinte: São criadas a partir 
+    da superclasse "Figuras" as Elipses e os  Retângulos e um código de intefaces separado para que ao clicar dentro de qualuqer 
+    figura no Frame, seja imnpresso a palavra "clicked". Observa-se  que a partir de uma  proproidade definida, estamos 
+    implementando dinâmicamante a impressão "Clicked". Em resumo a tipagem pato permite utilizar as interfaces de forma dinâmica. 
+    No   exemplo citado tal ação não se mostrou claramamnte necessária, pois não havia mais de uma classe abstrata, 
+    mas no mesmo exemplo, poderíamos querer que a impressão   "clicked" ocorresse ao clicarmos em algo que não fosse
+    "Figures", como por exemplo "Botões" estariamos utilizando o conceito de tipagem pato devido a propriedade 
+    "ser clicado" e com a interface implementar o  despacho dinâmico para essa ação. 
     
