@@ -52,5 +52,7 @@ public class Triangulo extends Figure {
         g2d.drawPolygon(this.a,this.b, 3);
         g2d.setColor(this.Background);
         g2d.fillPolygon(this.a,this.b, 3);
+        g2d.setColor(new Color(255,0,0));
+       // g2d.fillOval(this.x,this.y, 10,10);
         }
     }
