@@ -46,7 +46,7 @@ class ListFrame extends JFrame {
                     
                     for (Figure fig: figs) {
                         if (fig.clicked(x,y)) {
-                            //System.out.println("teste ok.");
+                            System.out.println("teste ok.");
                             focused = fig;
                             focused.Board=c;
                         }
@@ -74,7 +74,9 @@ class ListFrame extends JFrame {
                     }
                 }
             );
-                  
+              
+        this.setTitle("Iterface IVisible");
+        this.setSize(350, 350);
         /*Listener para alterar as figuras com o mouse
         this.addMouseMotionListener( 
             new MouseAdapter() {
