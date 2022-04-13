@@ -3,8 +3,9 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
+import ivisible.IVisible;
 
-public abstract class Figure {
+public abstract class Figure implements IVisible {
     public int x, y;
     public int w, h;
         public Color Board, Background ;
