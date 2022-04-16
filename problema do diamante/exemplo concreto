@@ -21,4 +21,10 @@ A solução para esse problema consiste em implermentar em uma classe a quantida
 padrões com a mesmas assinatura de métodos. Os códigos anexos Ialuno, Iprofessor e ususrio_soluçao. Esse programa roda é execulatvel e
 pode ser testado executando o método print. 
 
-Vamos 
+Suponho que a solução para o problema do diamante apresentada, isto é utilizar interfaces,  apresenta falhas quando as assinaturas do 
+métodos nas interfaces são mal definidas.
+Para exemplificar fiz um programa que descreve um jogador de futebol perfeito.
+Na assintaura dos métodos, descrevi o adjetivos do goleiro do do atacante.
+O programa complilou sem erros de sintaxe, mas levou ao resultado absurdo para o jogador ideal
+Os programas são Iatacante, Igoleiro e jogador_perfeito. 
+
