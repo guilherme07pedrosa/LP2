@@ -2,10 +2,12 @@ Segue um programa para o cadatro de alunos o professores no estacionamanto da UE
 Foi criada a classe alunos
 Foi criada a classe professor
 Foi criada a superclasse usuario que extende aluno e professor
-Observe que o programa não roda e anexo uma figura com o desenho das referências no BlueJ
-da superclasse para as classes. Observe pelas linhas descritas no gáfico do programa
-que há uma indefinição se a supeclasse está se referindo a professor ou a aluno. Esse é o problema do diamante 
-e o Java para solucionar esse problema não aceita referências múltiplas. Segue baixo uma ilustração do problema do diamante. 
+Observe que o programa não roda pois há uma uma indefinição se a supeclasse está se referindo a professor ou a aluno. 
+Esse é o problema do diamante . 
+Segue baixo uma ilustração do problema do diamante. 
+Conforme solicitado, os códigos para esse programa estão anexos neste diretório:
+
+
 
                           usuario
                         /         \
@@ -14,3 +16,5 @@ e o Java para solucionar esse problema não aceita referências múltiplas. Segu
                        \            /
                         \          /
                             test  
+
+A solução 
