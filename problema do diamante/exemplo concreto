@@ -5,7 +5,7 @@ Foi criada a superclasse usuario que extende aluno e professor
 Observe que o programa não roda pois há uma uma indefinição se a supeclasse está se referindo a professor ou a aluno. 
 Esse é o problema do diamante . 
 Segue baixo uma ilustração do problema do diamante. 
-Conforme solicitado, os códigos para esse programa estão anexos neste diretório:
+Conforme solicitado, os códigos para esse programa estão anexos neste diretório e são aluno, professor e usuario:
 
 
 
@@ -17,4 +17,8 @@ Conforme solicitado, os códigos para esse programa estão anexos neste diretór
                         \          /
                             test  
 
-A solução 
+A solução para esse problema consiste em implermentar em uma classe a quantidade de interfaces necessárias e estas conterem métodos
+padrões com a mesmas assinatura de métodos. Os códigos anexos Ialuno, Iprofessor e ususrio_soluçao. Esse programa roda é execulatvel e
+pode ser testado executando o método print. 
+
+Vamos 
