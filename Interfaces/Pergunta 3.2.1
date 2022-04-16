@@ -22,7 +22,7 @@
     - Método 2 (significado do método, parâmetros com significado)
     - Sintaxe da Interface em Java
     - Exemplo de uso
-    
+ ############################################################################################   
     EXEMPLO 1. 
     A UERJ está reformando o seu estacionamanto e seu sistema de entrada. Vai utillizar 
     porteiros eletrônoicos para 
@@ -50,56 +50,58 @@
    Por fim juntei todas as classes represetadas por listas estáticas em uma única superclasse, 
    denomindada ArrayList e todas as classes representadas por listas dinâmicas em uma
    única superclasse denominada LinkedLista - Para estas duas criei uma interface denominada List.
+   PRECISO USAR DA INTERFACE POIS TEMOS DUAS CLASSES COM CONTRUTORES DISTINTOS UMA É UM ARRAY E OUTRA É UMA 
+   LISTA LIGADA. O ADJETIVO COMUM É SER ENTRÁVEL, ISTO É ENTRAM NAS DEPENDÊNCIAS DA INSTITUIÇÃO. 
+ 
    
-   Exemplo de código (só vou fazer o primeiro caso)
-   
-   
-   public class UERJ_motorista extends Motorista
-    public  UERJ_motorista (int x){
-        super(x);
-    }
-   
+   1. ADJETIVO - "Entrável" (objeto 1-fubcionário, objeto 2 - aluno, objeto 3 - visitante)
+   método 1 (Verifica_array / void)- verificar se carteira de motorista do funcionário ou aluni está no ARRAY_LISTA
+   método 2 (Verifica_linked_list / void)- verificar se a placa do veículo está no LINKED_LIST
+   Interface ( IPode_entrar /bool ) - autoriza a entrada.  
    
    public abstract class Motorista implements IPode_entrar {
     public int x;
-    public boolean cadastrado (int x) {
-        return (True); (verifica se esta cadastrado)
+    public boolean pode_entrar (int x) {
+        return (True); (verifica se é entravél )
     }
     
-    public interface IPode_entrar {
-    public boolean cadastrado (int x);
+    public interface IPode_entrar (int x){
+    public boolean Ipode_entrar ;
    
    }
+   
+   
+   
    ############################################################################################################################
    Exemplo 2 - Sistema bancario. 
    Fui contratado para criar em Java programa para controle de um banco.
-   Esse será assim definido:
-   classes: conta_corrente, conta_salario e poupança. 
-  
-  superclasse: conta
-  
-  public class Conta extends conta_corrente(float x(){
+    O adjettivo autorizável , permite ter acesso aos dados bancários no sistema, só que existe duas classes distintas as dos usuários
+    do banco que tem autorização apenas para entrar em suas contas e a dos funcionário do banco
+    que podem acessas as suas contas e a dos clientes do banco. Temos duas classes clientes, funcionários e uma superclasse usuário. 
+    Esse será assim definido:
+    
    
-   public void saque(float saque){
-   float saque;
-   this.conta = this.conta -saque;
-   
-   }- sacar um valor
-   
-   
-   
-   public void depositar (float deposito) {- depositar um valor
-    float deposito;
-    this.conta = this.conta +deposito;
-  }
+    2. ADJETIVO - "Autorizável " (objeto 1-conta-corrente, objeto 2 - conta-salario, objeto 3 - poupança)
+       método 1(Sacar/void) - sacar, permite o saque em  um dos 3 objetos acima. 
+       método 2(Depositar/void) - depositar, permite o depósito em um dos 3 objetos acima. 
+       Interface IAutorizavel  (bool)- permite o acesso a um dos objetos acima citado mediante a senha, a diferença é que os funcionários
+       do banco podem utilizar também sua sinha para acessar os objetos do clientes. 
   
-  public abstrat class Conta implements iBanco{
-   public void saque(float saque);
-  public void depositar (float deposito);
-  }
-  
-  }
-  
+ 
+  public abstract class usuario implements IAutorizavel {
+    
+    public abstract class usuario implements  IAutorizavel{
+    public int x;
+    public boolean pode_entrar (int x) {
+        return (True); (verifica se pode acessas a conta)
+    }
+    
+    
+    public interface IIAutorizavel (int x){
+    public boolean IAutorizavelr ;
+   
+   }
+   
    
    
    
