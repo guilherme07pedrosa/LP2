@@ -1,11 +1,9 @@
 Segue um programa para o cadatro de alunos o professores no estacionamanto da UERJ. 
-Foi criada a classe alunos
-Foi criada a classe professor
-Foi criada a superclasse usuario que extende aluno e professor
+ classe alunos, classe professor e  superclasse usuario. 
 Observe que o programa não roda pois há uma uma indefinição se a supeclasse está se referindo a professor ou a aluno. 
-Esse é o problema do diamante . 
-Segue baixo uma ilustração do problema do diamante. 
-Conforme solicitado, os códigos para esse programa estão anexos neste diretório e são aluno, professor e usuario:
+Esse é o problema do diamante. 
+Segue abaixo uma ilustração do problema do diamante. 
+Conforme solicitado, os códigos para esse programa estão anexos neste diretório e são aluno, professor e usuario. OBS: Esse programa não compila. 
 
 
 
@@ -18,8 +16,8 @@ Conforme solicitado, os códigos para esse programa estão anexos neste diretór
                             test  
 
 A solução para esse problema consiste em implermentar em uma classe a quantidade de interfaces necessárias e estas conterem métodos
-padrões com a mesmas assinatura de métodos. Os códigos anexos Ialuno, Iprofessor e ususrio_soluçao. Esse programa roda é execulatvel e
-pode ser testado executando o método print. 
+padrões com a mesmas assinatura de método. Os códigos anexos Ialuno, Iprofessor e ususrio_soluçao. Esse programa compila  e
+pode ser testado. 
 
 Suponho que a solução para o problema do diamante apresentada, isto é utilizar interfaces,  apresenta falhas quando as assinaturas do 
 métodos nas interfaces são mal definidas.
