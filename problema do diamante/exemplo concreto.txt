@@ -25,6 +25,6 @@ Suponho que a solução para o problema do diamante apresentada, isto é utiliza
 métodos nas interfaces são mal definidas.
 Para exemplificar fiz um programa que descreve um jogador de futebol perfeito.
 Na assintaura dos métodos, descrevi o adjetivos do goleiro do do atacante.
-O programa complilou sem erros de sintaxe, mas levou ao resultado absurdo para o jogador ideal
+O programa complilou sem erros de sintaxe, mas levou ao resultado absurdo para o jogador perfeito
 Os programas são Iatacante, Igoleiro e jogador_perfeito. 
 
