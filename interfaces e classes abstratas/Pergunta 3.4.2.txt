@@ -1,0 +1,27 @@
+- Descreva um caso de uso para classes abstratas e outro para interfaces.
+- Considere o slide 23 do Módulo 3.
+- Baseado nas diferenças fundamentais entre classes abstratas e interfaces, 
+descreva um cenário representativo para cada técnica.
+    - Lembre-se da discussão sobre "natureza parecida" para subclasses de classes abstratas e sobre 
+    hierarquias desconexas para o classes que implementam interfaces.
+
+- Justifique a escolha em cada caso.
+- Faça um esboço de um código de exemplo. Não é necessário implementar os métodos.
+- Não use os exemplos já vistos na disciplina (ex., Figure, IVisible, Voável, etc).
+
+1. Classe abstrata (use um substantivo):
+    a. caso representativo
+    b. justificativa
+    c. esboço do código
+    d. dê exemplos de subclasses
+
+2. Interface (use um adjetivo):
+    a. caso representativo
+    b. justificativa
+    c. esboço do código
+    d. dê exemplos de classes que a implementam
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+1. Vou criar um programa para os usuários dos serviços da UERJ: alunos, professores, funcionários. 
+Como vou descrever um programa para quem "é usuário" vou utilizar classes abstratas.  
+
+
