@@ -10,6 +10,12 @@ d) De exemplo de sublasses - Professor Titular, Professor Adjunto, Aluno de Grad
 
 #######################################################################################################
 Interface: Funciinalidade comum para classes diversas. 
-O exemplo é o jogo SpaceInvaders. Esse jogo da década de 80 consitia 
+O exemplo é o jogo SpaceInvaders. Esse jogo da década de 80 consitia em uma nave que se movia no 
+sentido horizontal no topo da tela e asteróides que caiam. O jogo consistia em atirar nos asteróides 
+bem como desviar destes. 
+a) Caso represenntativo - jogo SpaceInvaders
+b) Justicativa - As classes asteróides e naves não tem métodos semelhantes. O que esles tem em comum é serem visíveis no jogo
+c) Esboce o código. Não propcurei detalhar muito, pois foge do escopo desta questão. Os códigos estão na paste Interface
+d) Subclasses - Nave e asteróide.
 
 
