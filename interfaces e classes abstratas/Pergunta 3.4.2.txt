@@ -1,6 +1,12 @@
 Classe: arcabouço para grupo de classes com propriedade similares. Um exemplo é um cadatro para usuários
-da bilioteca da UERJ. Citei duas classes, alunos e professores e ambos tem em comum umas string e um número inteiro
-para o estudante é matrícula e do professor o número do seu cadatro. 
+da bilioteca da UERJ. 
 O cógidos estão na pasta classe abstrata.
+a) Caso representativo- Contrução de um cadastro de usuários da Biblioteca da UERJ
+b) Justificativa - As classes subclasses Professores e Alunos são usuário e tem em comum nome e 
+numero seja de matricula (estudante ou de trabalho)
+c) Esboce o código - Os códigos estão na pasta classe abstrata
+d) De exemplo de sublasses - Professor Titular, Professor Adjunto, Aluno de Graduação, Aluno de Doutorado. 
+
+#######################################################################################################
 
 
