@@ -9,7 +9,7 @@ c) Esboce o código - Os códigos estão na pasta classe abstrata
 d) De exemplo de sublasses - Professor Titular, Professor Adjunto, Aluno de Graduação, Aluno de Doutorado. 
 
 #######################################################################################################
-Interface: Funciinalidade comum para classes diversas. 
+Interface: Funcionalidade comum para classes diversas. 
 O exemplo é o jogo SpaceInvaders. Esse jogo da década de 80 consitia em uma nave que se movia no 
 sentido horizontal no topo da tela e asteróides que caiam. O jogo consistia em atirar nos asteróides 
 bem como desviar destes. 
