@@ -27,6 +27,11 @@ public class NaveEspacial implements SpaceInvaders
         return false;
     }
     
+    public int Score(){
+        return 1000;
+    }
+    
+    
 }
     
 
