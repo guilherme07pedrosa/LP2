@@ -5,12 +5,12 @@ import java.awt.Point;
 import java.awt.event.MouseEvent;
 import ivisible.IVisible;
 
-public abstract class Figure implements IVisible {
-    public int x, y;
-    public int w, h;
+    public abstract class Figure implements IVisible {
+        protected int x, y;
+        protected int w, h;
         public Color Board, Background ;
   
-    public Figure(int x, int y, int w, int h,Color Board, Color Background){
+    protected Figure(int x, int y, int w, int h,Color Board, Color Background){
         this.x=x;
         this.y=y;
         this.w=w;
