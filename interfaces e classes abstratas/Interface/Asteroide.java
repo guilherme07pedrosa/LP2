@@ -31,4 +31,7 @@ public class Asteroide implements SpaceInvaders
         return y+dy;
     }
     
+    public boolean Explodir(){
+        return false;
+    }
 }
