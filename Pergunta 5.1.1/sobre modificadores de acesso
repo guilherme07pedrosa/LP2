@@ -1,1 +1,15 @@
-Sobre modificadores de acessso
+A única modificação que consegui fazer sem alterar a funcionalidade do sistema, foi na classe figure:
+  
+  public abstract class Figure implements IVisible {
+        protected int x, y;
+        protected int w, h;
+        public Color Board, Background ;
+  protected Figure(int x, int y, int w, int h,Color Board, Color Background){
+        this.x=x;
+        this.y=y;
+        this.w=w;
+        this.h=h;
+            this.Board=Board;
+            this.Background=Background;
+   
+   Não consegui nada mais restrito que o citado. Vou atualizar a pasta do Projeto com essa funcionalidade
