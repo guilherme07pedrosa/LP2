@@ -23,6 +23,10 @@ public class NaveEspacial implements SpaceInvaders
         return true;
     }
     
+    public boolean Explodir(){
+        return false;
+    }
+    
 }
     
 
