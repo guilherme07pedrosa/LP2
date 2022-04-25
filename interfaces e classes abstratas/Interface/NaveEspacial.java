@@ -1,6 +1,6 @@
 
 /**
- * Escreva uma descrição da classe NaveEspacial aqui.
+  NaveEspacial- se desloca no eixo X, Aitra e Explode.
  
  */
 public class NaveEspacial implements SpaceInvaders
