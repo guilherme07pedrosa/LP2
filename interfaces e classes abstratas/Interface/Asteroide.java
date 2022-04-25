@@ -1,9 +1,6 @@
 
 /**
- * Escreva uma descrição da classe Missil aqui.
- * 
- * @author (seu nome) 
- * @version (um número da versão ou uma data)
+ * Asteroide - se desloca no eixo x e eixo y e explode
  */
 public class Asteroide implements SpaceInvaders
 {
