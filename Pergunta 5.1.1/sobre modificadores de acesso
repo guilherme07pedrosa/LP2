@@ -13,3 +13,7 @@ A única modificação que consegui fazer sem alterar a funcionalidade do sistem
             this.Background=Background;
    
    Não consegui nada mais restrito que o citado. Vou atualizar a pasta do Projeto com essa funcionalidade
+   Accredito que a razão seja a utilização destes modificadores na classe ListApp, essa classe contém a função main.
+   Ao inserir o modificadior privativo, não consigo invocar esse método fora da classe. 
+   O mesmo vale para os modificadores de Color Board e Background. Utilzei estas varáveis para o foco. Se as protejo não consigo utilzar 
+   esse método. 
