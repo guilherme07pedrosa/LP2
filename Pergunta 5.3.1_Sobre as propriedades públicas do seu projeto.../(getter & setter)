@@ -1,0 +1,56 @@
+1. Enumere as propriedades públicas do seu projeto.
+a) cor da  borda e do fundo das figuras (public Color Board, Background)
+b) arrastar a figura( public void drag)
+c) clicar o mouse sobre a figura ( public boolean clicked)
+d) redimensionar a figura (public  void resize)
+e) pintar as figuras(public abstract void paint)
+
+
+
+2. Justifique se o uso de métodos de acesso (getter & setter) é vantajoso para cada uma delas.
+a) cor da  borda e do fundo das figuras (public Color Board, Background) - Foi necessário utiliza o acesso via 'setter' 
+para definir a cor de cada figura entre as disponíveis na API Java2D Graphics. 
+Ex:
+g2d.fill(new Ellipse2D.Double(this.x,this.y, this.w,this.h));
+  g2d.setColor(new Color(255,0,0));
+
+
+b) arrastar a figura( public void drag) - foi necessário utilizar o acesso via 'getter' para obter 
+a diferença entre a posição inicial da figura e a posição anterior.
+Ex.
+focused.drag(evt.getX() - mouse.x, evt.getY() - mouse.y);
+  mouse = getMousePosition();
+
+c) clicar o mouse sobre a figura ( public boolean clicked) - foi necessário utilizar o acesso via 'getter' para obter 
+a posição do mouse sobre a tela.
+Ex. 
+public void  mousePressed(MouseEvent evt) {
+  mouse = getMousePosition();
+  focused=null;
+  int x = evt.getX();
+  int y = evt.getY();
+    if (focused != null) {
+      focused.Board = c;
+     }
+     focused=null;
+     for (Figure fig: figs) {
+       if (fig.clicked(x,y)) {
+           System.out.println("teste ok.");
+           focused = fig;
+           focused.Board=c;
+           }
+  }
+   
+d) redimensionar a figura (public  void resize) - Foi utilizado o acesso a opção de acesso a essa funcionalidade via 'getter'
+ex:
+else if (evt.getKeyCode() == KeyEvent.VK_UP){
+                            focused.resize(5, 5);
+                        }
+
+
+
+
+
+
+
+3. Altere o programa de acordo. Indique na resposta quais alterações foram feitas.
