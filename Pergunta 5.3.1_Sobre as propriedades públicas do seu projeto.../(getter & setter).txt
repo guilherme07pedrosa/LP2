@@ -47,10 +47,5 @@ else if (evt.getKeyCode() == KeyEvent.VK_UP){
                             focused.resize(5, 5);
                         }
 
-
-
-
-
-
-
-3. Altere o programa de acordo. Indique na resposta quais alterações foram feitas.
+3. Altere o programa de acordo. Indique na resposta quais alterações foram feitas. Não vejo maneira de alterar esse program sem utilizar 
+as opções de acesso citadas. 
