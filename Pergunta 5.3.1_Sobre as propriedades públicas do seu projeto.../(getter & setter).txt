@@ -3,14 +3,11 @@
 
 
 2. Justifique se o uso de métodos de acesso (getter & setter) é vantajoso para cada uma delas.
-- cor da  borda e do fundo das figuras (public Color Board, Background) - Foi necessário utiliza o acesso via 'setter' 
-para definir a cor de cada figura entre as disponíveis na API Java2D Graphics. 
-Ex:
-g2d.fill(new Ellipse2D.Double(this.x,this.y, this.w,this.h));
-  g2d.setColor(new Color(255,0,0));
+- No presente caso é indiferente.
 
 
 
 3. Altere o programa de acordo. Indique na resposta quais alterações foram feitas. Não vejo maneira de alterar esse program sem utilizar 
 as opções de acesso citadas. 
 Alterado para conferência acessar a pasta do projeto. 
+https://github.com/guilherme07pedrosa/LP2/blob/main/Projeto1_2/figures/Figure.java
