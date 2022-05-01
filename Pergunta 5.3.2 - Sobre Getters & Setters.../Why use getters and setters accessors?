@@ -2,7 +2,66 @@
     - https://stackoverflow.com/questions/1568091/why-use-getters-and-setters-accessors
 
 1. Destaque um ponto a favor o uso de métodos de acesso. Justifique.
+O uso de Gettres&Setters força que parâmestros sejam passados durante a execução do programa:
+Veja um programa que pode levar a um absurdo:
+
+Bottle bot = new Bottle();
+bot.amountOfWaterMl = 1500;
+bot.capacityMl = 1000;
+
+Este código informa uma quantidade de líquido maior que a cpacidade da garrafa:
+problema solucionado com o seguinte código:
+
+public interface LiquidContainer {
+  public int getAmountMl();
+  public void setAmountMl(int amountMl);
+  public int getCapacityMl();
+}
+
+public class Bottle extends LiquidContainer {
+  private int capacityMl;
+  private int amountFilledMl;
+
+  public Bottle(int capacityMl, int amountFilledMl) {
+    this.capacityMl = capacityMl;
+    this.amountFilledMl = amountFilledMl;
+    checkNotOverFlow();
+  }
+
+  public int getAmountMl() {
+    return amountFilledMl;
+  }
+
+  public void setAmountMl(int amountMl) {
+     this.amountFilled = amountMl;
+     checkNotOverFlow();
+  }
+  public int getCapacityMl() {
+    return capacityMl;
+  }
+
+
+
 2. Destaque um ponto contra  o uso de métodos de acesso. Justifique.
+Getters&Setters dificulta a depuração de um problema: Segue o tercho do artigo:
+
+Lots of people talk about the advantages of getters and setters but I want to play devil's advocate. 
+Right now I'm debugging a very large program where the programmers decided to make everything getters and setters. 
+That might seem nice, but its a reverse-engineering nightmare.
+
+Say you're looking through hundreds of lines of code and you come across this:
+
+person.name = "Joe";
+It's a beautifully simply piece of code until you realize its a setter. 
+Now, you follow that setter and find that it also sets person.firstName, person.lastName, person.isHuman, person.hasReallyCommonFirstName, 
+and calls person.update(), which sends a query out to the database, etc. Oh, that's where your memory leak was occurring.
+
+Understanding a local piece of code at first glance is an important property of good readability that getters and setters tend to break. 
+That is why I try to avoid them when I can, and minimize what they do when I use them.
+
+
+
+
 
 
 - Nos dois casos, copie/cite um trecho do texto usado como base.
