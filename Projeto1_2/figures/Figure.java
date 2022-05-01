@@ -8,7 +8,13 @@ import ivisible.IVisible;
     public abstract class Figure implements IVisible {
         protected int x, y;
         protected int w, h;
-        public Color Board, Background ;
+        public Color Board;
+        public void setBoard(Color Board){this.Board=Board;}
+        public Color getBoard(){return Board;};
+        public Color Background;
+        public void setBackground(Color Background){this.Background=Background;}
+        public Color getBackground(){return Background;};
+       
   
     protected Figure(int x, int y, int w, int h,Color Board, Color Background){
         this.x=x;
@@ -19,15 +25,12 @@ import ivisible.IVisible;
             this.Background=Background;
         
     }
-    public void drag (int dx, int dy) {
+   public void drag (int dx, int dy) {
         this.x += dx;
         this.y += dy;
         
     }
     
-    
-    
-
     public boolean clicked (int x, int y) {
         return (this.x<=x && x<=this.x+this.w && this.y<=y && y<=this.y+this.h);
     }
