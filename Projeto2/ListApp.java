@@ -20,14 +20,13 @@ class ListFrame extends JFrame {
     Figure focused = null;
     Point mouse=null;
     Button focus_but;
-    boolean but_clicked;
-    
+    boolean but_clicked=false;
     int x, y, w, h;
     Color c;
 
     ListFrame () {
-        buts.add(new Button(0, new Rect(24, 24, 0, 0,Color.white,Color.gray))); // botão para Triangulo 
-        buts.add(new Button(1, new Ellipse(205,123, 0,0,Color.white,Color.gray))); //botão para C
+        buts.add(new Button(0, new Rect(24, 24, 0, 0,Color.white,Color.gray))); // 
+        buts.add(new Button(1, new Ellipse(205,123, 0,0,Color.white,Color.gray))); //
        //try{
         //    FileInputStream f=new FileInputStream("proj.bin");
          //   ObjectInputStream o=new ObjectInputStream(f);
@@ -57,33 +56,36 @@ class ListFrame extends JFrame {
        this.addMouseListener (
             new MouseAdapter() {
                 public void  mousePressed(MouseEvent evt) {
-                    mouse = getMousePosition();
+                    mouse = getMousePosition();/*evt.getPoint()*/
                     focused=null;
                     focus_but=null;
                     but_clicked=false;
                     
                     int x = evt.getX();
                     int y = evt.getY();
-                     if (focused != null) {
-                        focused.Board = c;
-                    }
-                    focused=null;
+                    // if (focused != null) {
+                    //    focused.Board = c;
+                 //   }
+                 //   focused=null;
                     
                     for (Figure fig: figs) {
                         if (fig.clicked(x,y)) {
                             //System.out.println("teste ok.");
                             focused = fig;
-                            focused.Board=c;
+                            focus_but=null;
+                            //focused.Board=c;
+                            but_clicked=false;
                         }
                     }
                     //Foco Z, a cor da última figura sempre clicada sempre vai prevalecer quando colocada em cima das outras
                     if (focused != null) {
-                       focused.Board=c;
                        figs.remove(focused);
                        figs.add(focused);
                         }
+                    
                     for (Button but:buts) {
-                        if(but.clicked(x,y)){ // botão em foco
+                        if(but.clicked(x,y)){ 
+                            //System.out.println("teste ok.");
                             focus_but = but;
                             focused = null;
                             but_clicked = true;
@@ -91,12 +93,22 @@ class ListFrame extends JFrame {
                     }
             repaint();
             
-                
+              if (focused == null && focus_but != null){
+                        if (focus_but == buts.get(0)) { 
+                            figs.add(new Rect(mouse.x,mouse.y, 50,50,Color.white,Color.gray));                                                 
+                            focus_but = null;
+                        }
+                        else if (focus_but == buts.get(1)) {
+                            figs.add(new Ellipse(mouse.x,mouse.y, 50,50,Color.white,Color.yellow ));
+                            focus_but = null;
+                        }  
             
             
                 }
+            repaint();
             }
-            );
+        }  
+        );
                     
         /*Listener para arrastar figuras*/
         this.addMouseMotionListener( 
@@ -105,11 +117,6 @@ class ListFrame extends JFrame {
                     focused.drag(evt.getX() - mouse.x, evt.getY() - mouse.y);
                     mouse = getMousePosition();
                     repaint();
-                          
-                    
-                    
-                    
-                    
                     }
                 }
             );
@@ -187,8 +194,8 @@ class ListFrame extends JFrame {
             }
             );
                     
-        this.setTitle("Lista de Figuras");
-        this.setSize(350, 350);
+        //this.setTitle("Lista de Figuras");
+       // this.setSize(350, 350);
     }
 
     
