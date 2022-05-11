@@ -27,7 +27,7 @@ class ListFrame extends JFrame {
 
     ListFrame () {
         buts.add(new Button(0, new Rect(24, 24, 0, 0,Color.white,Color.gray))); // botão para Triangulo 
-        buts.add(new Button(1, new Ellipse(24,144, 0,0,Color.white,Color.gray))); //botão para C
+        buts.add(new Button(1, new Ellipse(205,123, 0,0,Color.white,Color.gray))); //botão para C
        //try{
         //    FileInputStream f=new FileInputStream("proj.bin");
          //   ObjectInputStream o=new ObjectInputStream(f);
@@ -82,14 +82,18 @@ class ListFrame extends JFrame {
                        figs.remove(focused);
                        figs.add(focused);
                         }
-                   // for (Button but:buts) {
-                    //    if(but.clicked(x,y)){ // botão em foco
-                    //        focus_but = but;
-                     //       focused = null;
-                         //   but_clicked = true;
-                    //    }
-                  //  }
+                    for (Button but:buts) {
+                        if(but.clicked(x,y)){ // botão em foco
+                            focus_but = but;
+                            focused = null;
+                            but_clicked = true;
+                        }
+                    }
             repaint();
+            
+                
+            
+            
                 }
             }
             );
@@ -102,6 +106,10 @@ class ListFrame extends JFrame {
                     mouse = getMousePosition();
                     repaint();
                           
+                    
+                    
+                    
+                    
                     }
                 }
             );
@@ -124,6 +132,12 @@ class ListFrame extends JFrame {
                         figs.add(new Rect(x,y, w,h,Color.white,Color.black));
                         
                     } 
+                        
+                        
+                        
+                        
+                        
+                    
                     
                    // else if (evt.getKeyChar() == 'R') {
                     //figs.add(new Rect(x,y, w,h,Color.white,Color.gray));
@@ -181,10 +195,10 @@ class ListFrame extends JFrame {
     public void paint (Graphics g) {
         super.paint(g);
         for (Figure fig: this.figs) {
-            fig.paint(g);
-        //for (Button but: this.buts)  { 
-        //    but.paint(g,but == focus_but);
-       // }
+            fig.paint(g,fig==focused);
+        for (Button but: this.buts)  { 
+            but.paint(g,but == focus_but);
+       }
     
         
     }
