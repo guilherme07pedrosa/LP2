@@ -1,4 +1,3 @@
-//ListApp.java
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -11,7 +10,6 @@ class ListApp {
     public static void main (String[] args) {
         ListFrame frame = new ListFrame();
         frame.setVisible(true);
-        
     }
 }
 
@@ -21,44 +19,36 @@ class ListFrame extends JFrame {
     int i;
     Figure focused = null;
     Point mouse=null;
-    Point position;
-    Button focus_but=null;
+    Button focus_but;
     boolean but_clicked;
+    
     int x, y, w, h;
     Color c;
-    
-    ListFrame(){
-        buts.add(new Button(0, new Rect(0,0, 0,0,Color.white,Color.gray)));// botão para Reta
-        buts.add(new Button(1, new Ellipse(0,0, 0,0,Color.white,Color.gray)));// botão pra ellipse
-     //   buts.add(new Button(2, new Triangulo(28, 233, 0, 0,Color.white,Color.gray))); // botão para Triangulo 
-      //  buts.add(new Button(3, new Circulo(24,144, 0,0,Color.white,Color.gray))); //botão para C
-       /*try{
-            FileInputStream f=new FileInputStream("proj.bin");
-            ObjectInputStream o=new ObjectInputStream(f);
-            this.figs=(ArrayList<Figure>) o.readObject();
-            o.close();
-          }*//*catch (Exception x) {
-              System.out.println("ERRO");
-          }*/
-            
-    }
-    
-   
 
-     {
+    ListFrame () {
+        buts.add(new Button(0, new Rect(24, 24, 0, 0,Color.white,Color.gray))); // botão para Triangulo 
+        buts.add(new Button(1, new Ellipse(24,144, 0,0,Color.white,Color.gray))); //botão para C
+       //try{
+        //    FileInputStream f=new FileInputStream("proj.bin");
+         //   ObjectInputStream o=new ObjectInputStream(f);
+          //  this.figs=(ArrayList<Figure>) o.readObject();
+         //   o.close();
+        //  } catch (Exception x) {
+         //     System.out.println("ERRO");
+         // }
         this.addWindowListener (
             new WindowAdapter() {
                 public void windowClosing (WindowEvent e) {
-                   /* try {
-                        FileOutputStream f = new FileOutputStream("proj.bin");
-                        ObjectOutputStream o = new ObjectOutputStream(f);
-                        o.writeObject(figs);
-                        o.flush();
-                        o.close();
-                    }*/ /*catch (Exception x) {
-                        System.out.println("ERRO");
-                    }
-                    System.exit(0);*/
+                 //     try {
+                  //      FileOutputStream f = new FileOutputStream("proj.bin");
+                  //      ObjectOutputStream o = new ObjectOutputStream(f);
+                  //      o.writeObject(figs);
+                  //      o.flush();
+                  //      o.close();
+                  //  }  catch (Exception x) {
+                  //      System.out.println("ERRO");
+                   // }
+                   // System.exit(0);
                 }
             }
         );
@@ -69,6 +59,9 @@ class ListFrame extends JFrame {
                 public void  mousePressed(MouseEvent evt) {
                     mouse = getMousePosition();
                     focused=null;
+                    focus_but=null;
+                    but_clicked=false;
+                    
                     int x = evt.getX();
                     int y = evt.getY();
                      if (focused != null) {
@@ -78,7 +71,7 @@ class ListFrame extends JFrame {
                     
                     for (Figure fig: figs) {
                         if (fig.clicked(x,y)) {
-                            System.out.println("teste ok.");
+                            //System.out.println("teste ok.");
                             focused = fig;
                             focused.Board=c;
                         }
@@ -88,8 +81,14 @@ class ListFrame extends JFrame {
                        focused.Board=c;
                        figs.remove(focused);
                        figs.add(focused);
-                        
-                    }
+                        }
+                   // for (Button but:buts) {
+                    //    if(but.clicked(x,y)){ // botão em foco
+                    //        focus_but = but;
+                     //       focused = null;
+                         //   but_clicked = true;
+                    //    }
+                  //  }
             repaint();
                 }
             }
@@ -107,10 +106,9 @@ class ListFrame extends JFrame {
                 }
             );
               
-        this.setTitle("Projeto 2");
+        this.setTitle("Iterface IVisible");
         this.setSize(350, 350);
         
-            
         
         this.addKeyListener (
             new KeyAdapter() {
@@ -127,13 +125,37 @@ class ListFrame extends JFrame {
                         
                     } 
                     
-               
+                   // else if (evt.getKeyChar() == 'R') {
+                    //figs.add(new Rect(x,y, w,h,Color.white,Color.gray));
+                            
+                    
+                   // } 
                     else if (evt.getKeyChar() == 'e') {
                         figs.add(new Ellipse(x,y, w,h,Color.white,Color.yellow  ));
+
                         
-                   }
-                
-                 
+                    }
+                    /*
+                    else if (evt.getKeyChar() == 'E') {
+                        figs.add(new Ellipse(x,y, w,h,Color.white,Color.orange  ));
+                    }
+                    
+                    else if (evt.getKeyChar() == 't') {
+                        figs.add(new Triangulo(x,y, w,h,Color.white,Color.blue));
+                    }
+                    
+                    else if (evt.getKeyChar() == 'T') {
+                        figs.add(new Triangulo(x,y, w,h,Color.white,Color.cyan));
+                    }
+                      
+                    else if (evt.getKeyChar() == 'c') {
+                        figs.add(new Circulo(x,y, w,h,Color.white, Color.green));
+                        
+                    }
+                    else if (evt.getKeyChar() == 'C') {
+                        figs.add(new Circulo(x,y, w,h,Color.white, Color.red));
+                        
+                    }*/
                     
                     else if (evt.getKeyCode() == KeyEvent.VK_DELETE) {
                         figs.remove(i);}
@@ -151,7 +173,7 @@ class ListFrame extends JFrame {
             }
             );
                     
-        this.setTitle("Projeto 2");
+        this.setTitle("Lista de Figuras");
         this.setSize(350, 350);
     }
 
@@ -159,11 +181,12 @@ class ListFrame extends JFrame {
     public void paint (Graphics g) {
         super.paint(g);
         for (Figure fig: this.figs) {
-            fig.paint(g/*, fig==focused*/);
-        }
-        for (Button but: this.buts){
-            but.paint(g,but==focus_but); 
+            fig.paint(g);
+        //for (Button but: this.buts)  { 
+        //    but.paint(g,but == focus_but);
+       // }
+    
         
-        }
     }
+}
 }
