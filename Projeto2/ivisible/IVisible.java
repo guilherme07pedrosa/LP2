@@ -1,7 +1,4 @@
 package ivisible;
-/**
- Guilherme Pedrosa
- */
 
 import java.awt.Graphics;
 
