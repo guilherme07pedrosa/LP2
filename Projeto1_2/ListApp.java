@@ -29,28 +29,28 @@ class ListFrame extends JFrame {
         buts.add(new Button(1, new Ellipse(0,0, 0,0,Color.white,Color.gray)));
         buts.add(new Button(2, new Triangulo(0,0, 0,0,Color.white,Color.gray)));
         buts.add(new Button(3, new Circulo(0,0, 0,0,Color.white,Color.gray)));
-        //
-       //try{
-        //    FileInputStream f=new FileInputStream("proj.bin");
-         //   ObjectInputStream o=new ObjectInputStream(f);
-          //  this.figs=(ArrayList<Figure>) o.readObject();
-         //   o.close();
-        //  } catch (Exception x) {
-         //     System.out.println("ERRO");
-         // }
+        
+       try{
+            FileInputStream f=new FileInputStream("proj.bin");
+            ObjectInputStream o=new ObjectInputStream(f);
+            this.figs=(ArrayList<Figure>) o.readObject();
+            o.close();
+          } catch (Exception x) {
+              System.out.println("ERRO");
+          }
         this.addWindowListener (
             new WindowAdapter() {
                 public void windowClosing (WindowEvent e) {
-                 //     try {
-                  //      FileOutputStream f = new FileOutputStream("proj.bin");
-                  //      ObjectOutputStream o = new ObjectOutputStream(f);
-                  //      o.writeObject(figs);
-                  //      o.flush();
-                  //      o.close();
-                  //  }  catch (Exception x) {
-                  //      System.out.println("ERRO");
-                   // }
-                   // System.exit(0);
+                      try {
+                        FileOutputStream f = new FileOutputStream("proj.bin");
+                        ObjectOutputStream o = new ObjectOutputStream(f);
+                        o.writeObject(figs);
+                        o.flush();
+                        o.close();
+                    }  catch (Exception x) {
+                        System.out.println("ERRO");
+                    }
+                    System.exit(0);
                 }
             }
         );
