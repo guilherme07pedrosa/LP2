@@ -1,3 +1,4 @@
+
 package figures;
 import java.io.Serializable;
 import java.awt.Color;
@@ -6,12 +7,10 @@ import java.awt.Point;
 import java.awt.event.MouseEvent;
 import ivisible.IVisible;
 
-    public abstract class Figure implements IVisible, Serializable  {
-        public int x, y;
-        public int w, h;
-        public Color Board;
-        public Color Background;
-       
+public abstract class Figure implements IVisible, Serializable {
+    public int x, y;
+    public int w, h;
+        public Color Board, Background ;
   
     public Figure(int x, int y, int w, int h,Color Board, Color Background){
         this.x=x;
@@ -22,16 +21,15 @@ import ivisible.IVisible;
             this.Background=Background;
         
     }
-    
-    
-  
- 
-public void drag (int dx, int dy) {
+    public void drag (int dx, int dy) {
         this.x += dx;
         this.y += dy;
         
     }
     
+    
+    
+
     public boolean clicked (int x, int y) {
         return (this.x<=x && x<=this.x+this.w && this.y<=y && y<=this.y+this.h);
     }
@@ -47,5 +45,5 @@ public void drag (int dx, int dy) {
         
     
     
-    public abstract void paint (Graphics g);
+    public abstract void paint (Graphics g, boolean focused);
     }
