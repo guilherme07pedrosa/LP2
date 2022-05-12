@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Random;
 import figures.*;
+import java.io.*;
 
 class ListApp {
     public static void main (String[] args) {
@@ -14,19 +15,42 @@ class ListApp {
 
 class ListFrame extends JFrame {
     ArrayList<Figure> figs = new ArrayList<Figure>();
+    ArrayList<Button> buts = new ArrayList<Button>();
     int i;
     Figure focused = null;
     Point mouse=null;
-    Point position;
-    boolean mouse_clicked;
+    Button focus_but;
+    boolean but_clicked=false;
     int x, y, w, h;
     Color c;
 
     ListFrame () {
+        buts.add(new Button(0, new Rect(0, 0, 0, 0,Color.white,Color.gray))); 
+        buts.add(new Button(1, new Ellipse(0,0, 0,0,Color.white,Color.gray)));
+        buts.add(new Button(2, new Triangulo(0,0, 0,0,Color.white,Color.gray)));
+        buts.add(new Button(3, new Circulo(0,0, 0,0,Color.white,Color.gray)));
+        //
+       //try{
+        //    FileInputStream f=new FileInputStream("proj.bin");
+         //   ObjectInputStream o=new ObjectInputStream(f);
+          //  this.figs=(ArrayList<Figure>) o.readObject();
+         //   o.close();
+        //  } catch (Exception x) {
+         //     System.out.println("ERRO");
+         // }
         this.addWindowListener (
             new WindowAdapter() {
                 public void windowClosing (WindowEvent e) {
-                    System.exit(0);
+                 //     try {
+                  //      FileOutputStream f = new FileOutputStream("proj.bin");
+                  //      ObjectOutputStream o = new ObjectOutputStream(f);
+                  //      o.writeObject(figs);
+                  //      o.flush();
+                  //      o.close();
+                  //  }  catch (Exception x) {
+                  //      System.out.println("ERRO");
+                   // }
+                   // System.exit(0);
                 }
             }
         );
@@ -37,31 +61,68 @@ class ListFrame extends JFrame {
                 public void  mousePressed(MouseEvent evt) {
                     mouse = getMousePosition();
                     focused=null;
+                    focus_but=null;
+                    but_clicked=false;
+                    
                     int x = evt.getX();
                     int y = evt.getY();
-                     if (focused != null) {
-                        focused.Board = c;
-                    }
-                    focused=null;
+                    // if (focused != null) {
+                    //    focused.Board = c;
+                 //   }
+                 //   focused=null;
                     
                     for (Figure fig: figs) {
                         if (fig.clicked(x,y)) {
-                            System.out.println("teste ok.");
+                            //System.out.println("teste ok.");
                             focused = fig;
-                            focused.Board=c;
+                            focus_but=null;
+                            //focused.Board=c;
+                            but_clicked=false;
                         }
                     }
                     //Foco Z, a cor da última figura sempre clicada sempre vai prevalecer quando colocada em cima das outras
                     if (focused != null) {
-                       focused.Board=c;
                        figs.remove(focused);
                        figs.add(focused);
-                        
+                        }
+                    
+                    for (Button but:buts) {
+                        if(but.clicked(x,y)){ 
+                            //System.out.println("teste ok.");
+                            focus_but = but;
+                            focused = null;
+                            but_clicked = true;
+                        }
                     }
             repaint();
+            
+              if (focused == null && focus_but != null){
+                        if (focus_but == buts.get(0)) { 
+                            figs.add(new Rect(mouse.x,mouse.y, 50,50,Color.white,Color.gray));                                                 
+                            
+                        }
+                        else if (focus_but == buts.get(1)) {
+                            figs.add(new Ellipse(mouse.x,mouse.y, 50,70,Color.white,Color.gray ));
+                            
+                        }  
+                        
+                        else if (focus_but == buts.get(2)) {
+                            figs.add(new Triangulo(mouse.x,mouse.y, 100,100,Color.white,Color.gray ));
+                            
+                        }
+                        
+                        else if (focus_but == buts.get(3)) {
+                            figs.add(new Circulo(mouse.x,mouse.y, 50,50,Color.white,Color.gray ));
+                            
+                    
+                     }
+            
+            
                 }
+            repaint();
             }
-            );
+        }  
+        );
                     
         /*Listener para arrastar figuras*/
         this.addMouseMotionListener( 
@@ -70,27 +131,13 @@ class ListFrame extends JFrame {
                     focused.drag(evt.getX() - mouse.x, evt.getY() - mouse.y);
                     mouse = getMousePosition();
                     repaint();
-                          
                     }
                 }
             );
               
         this.setTitle("Iterface IVisible");
         this.setSize(350, 350);
-        /*Listener para alterar as figuras com o mouse
-        this.addMouseMotionListener( 
-            new MouseAdapter() {
-                public void mouseDragged (MouseEvent evt) { 
-                    int x=10;
-                    int y=10;
-                    focused.drag(evt.getX() - mouse.x, evt.getY() - mouse.y);
-                     focused.resize(1, 1);
-                    repaint();
-                          
-                    }
-                }
-            );*/
-            
+        
         
         this.addKeyListener (
             new KeyAdapter() {
@@ -106,37 +153,22 @@ class ListFrame extends JFrame {
                         figs.add(new Rect(x,y, w,h,Color.white,Color.black));
                         
                     } 
-                    
-                    if (evt.getKeyChar() == 'R') {
-                        figs.add(new Rect(x,y, w,h,Color.white,Color.gray));
-                            
-                    
-                    } 
+                 
                     else if (evt.getKeyChar() == 'e') {
                         figs.add(new Ellipse(x,y, w,h,Color.white,Color.yellow  ));
+
                         
-                    }
-                    else if (evt.getKeyChar() == 'E') {
-                        figs.add(new Ellipse(x,y, w,h,Color.white,Color.orange  ));
                     }
                     
                     else if (evt.getKeyChar() == 't') {
                         figs.add(new Triangulo(x,y, w,h,Color.white,Color.blue));
                     }
                     
-                    else if (evt.getKeyChar() == 'T') {
-                        figs.add(new Triangulo(x,y, w,h,Color.white,Color.cyan));
-                    }
-                      
                     else if (evt.getKeyChar() == 'c') {
                         figs.add(new Circulo(x,y, w,h,Color.white, Color.green));
                         
                     }
-                    else if (evt.getKeyChar() == 'C') {
-                        figs.add(new Circulo(x,y, w,h,Color.white, Color.red));
-                        
-                    }
-                    
+                   
                     else if (evt.getKeyCode() == KeyEvent.VK_DELETE) {
                         figs.remove(i);}
                     
@@ -153,15 +185,16 @@ class ListFrame extends JFrame {
             }
             );
                     
-        this.setTitle("Lista de Figuras");
-        this.setSize(350, 350);
     }
 
     
     public void paint (Graphics g) {
         super.paint(g);
         for (Figure fig: this.figs) {
-            fig.paint(g);
+            fig.paint(g,fig==focused);
+        for (Button but: this.buts)  { 
+            but.paint(g,but == focus_but);
+       }
     
         
     }
