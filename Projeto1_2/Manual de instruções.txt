@@ -8,6 +8,8 @@ OBS:
 3) A Figura criada onde o mouse estiver no Frame
 4) Para funcionar o resize, isto é, o redimesionamento das Figuras o mouse deve ser clidado na Figura.
 5) As figuras também pode ser criadas com os botões a esquerda do Frama 
+6) Os botões só aparecem após a criação da primeira figura. 
+
 
 Para criar uma elipse da cor 1- tecle "e"
 
