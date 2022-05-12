@@ -22,13 +22,20 @@ public class Rect extends Figure {
     
 
     
-        public void paint (Graphics g) {
+       public void paint (Graphics g, boolean focused) {
         Graphics2D g2d = (Graphics2D) g;
-        g2d.setColor(this.Board);
-        g2d.drawRect(this.x,this.y, this.w,this.h);
-        g2d.setColor(this.Background);
-        g2d.fillRect(this.x,this.y, this.w,this.h);
-        g2d.setColor(new Color(255,0,0));
-        //g2d.fillOval(this.x,this.y, 10,10);
+
+        g2d.setColor(Color.white);
+        g2d.fillRect(this.x, this.y, this.w, this.h);
+
+        if (focused){
+            g2d.setColor(Color.red);
+            g2d.drawRect(this.x, this.y, this.w,this.h);
         }
+        else {
+            g2d.setColor(Color.black);
+            g2d.drawRect(this.x, this.y, this.w, this.h);
+        }
+
+    }
     }
