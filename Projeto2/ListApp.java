@@ -26,7 +26,10 @@ class ListFrame extends JFrame {
 
     ListFrame () {
         buts.add(new Button(0, new Rect(24, 24, 0, 0,Color.white,Color.gray))); // 
-        buts.add(new Button(1, new Ellipse(205,123, 0,0,Color.white,Color.gray))); //
+        buts.add(new Button(1, new Ellipse(205,123, 0,0,Color.white,Color.gray)));
+        buts.add(new Button(2, new Triangulo(28,233, 0,0,Color.white,Color.gray)));
+        buts.add(new Button(3, new Circulo(24,144, 0,0,Color.white,Color.gray)));
+        //
        //try{
         //    FileInputStream f=new FileInputStream("proj.bin");
          //   ObjectInputStream o=new ObjectInputStream(f);
@@ -99,9 +102,19 @@ class ListFrame extends JFrame {
                             focus_but = null;
                         }
                         else if (focus_but == buts.get(1)) {
-                            figs.add(new Ellipse(mouse.x,mouse.y, 50,50,Color.white,Color.yellow ));
+                            figs.add(new Ellipse(mouse.x,mouse.y, 50,70,Color.white,Color.gray ));
                             focus_but = null;
                         }  
+                        
+                        else if (focus_but == buts.get(2)) {
+                        figs.add(new Triangulo(mouse.x,mouse.y, 50,50,Color.white,Color.gray ));
+                        }
+                        
+                        else if (focus_but == buts.get(3)) {
+                        figs.add(new Circulo(mouse.x,mouse.y, 50,50,Color.white,Color.gray ));
+                    
+                        
+                    }
             
             
                 }
@@ -154,6 +167,15 @@ class ListFrame extends JFrame {
                     else if (evt.getKeyChar() == 'e') {
                         figs.add(new Ellipse(x,y, w,h,Color.white,Color.yellow  ));
 
+                        
+                    }
+                    
+                    else if (evt.getKeyChar() == 't') {
+                        figs.add(new Triangulo(x,y, w,h,Color.white,Color.blue));
+                    }
+                    
+                    else if (evt.getKeyChar() == 'c') {
+                        figs.add(new Circulo(x,y, w,h,Color.white, Color.green));
                         
                     }
                     /*
