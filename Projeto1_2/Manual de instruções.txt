@@ -7,8 +7,7 @@ OBS:
 2)O triângulo ser clicado um pouco deslocado do centro para esquerda e para baixo. 
 3) A Figura criada onde o mouse estiver no Frame
 4) Para funcionar o resize, isto é, o redimesionamento das Figuras o mouse deve ser clidado na Figura.
-5) Se uma Figura se sobrepor a outra, vai a que está "em cima" permanecerá com a cor inalterada a que está "em baixo" ficara com o efeito de uma sombra em sua cor. 
-6) As figuras também pode ser criadas com os botões a esquerda do Frama 
+5) As figuras também pode ser criadas com os botões a esquerda do Frama 
 
 Para criar uma elipse da cor 1- tecle "e"
 
