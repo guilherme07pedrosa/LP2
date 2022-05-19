@@ -21,17 +21,18 @@ class ListFrame extends JFrame {
     Point mouse=null;
     Button focus_but;
     boolean but_clicked=false;
-    int x, y, w, h;
-    Color c;
+   
 
     ListFrame () {
-        buts.add(new Button(0, new Rect(0, 0, 0, 0,Color.white,Color.gray))); 
+        buts.add(new Button(2, new Rect(0, 0, 0, 0,Color.white,Color.gray))); 
         buts.add(new Button(1, new Ellipse(0,0, 0,0,Color.white,Color.gray)));
-        buts.add(new Button(2, new Triangulo(0,0, 0,0,Color.white,Color.gray)));
+        buts.add(new Button(0, new Triangulo(85,60, 50,40,Color.white,Color.gray)));
         buts.add(new Button(3, new Circulo(0,0, 0,0,Color.white,Color.gray)));
+        buts.add(new Button(4, new Quadrado(0,0, 0,0,Color.white,Color.gray)));
+        buts.add(new Button(5, new Texto(0,0, 0,0,Color.white,Color.gray)));
         
        try{
-            FileInputStream f=new FileInputStream("proj.bin");
+            FileInputStream f=new FileInputStream("proj.svg");
             ObjectInputStream o=new ObjectInputStream(f);
             this.figs=(ArrayList<Figure>) o.readObject();
             o.close();
@@ -42,7 +43,7 @@ class ListFrame extends JFrame {
             new WindowAdapter() {
                 public void windowClosing (WindowEvent e) {
                       try {
-                        FileOutputStream f = new FileOutputStream("proj.bin");
+                        FileOutputStream f = new FileOutputStream("proj.svg");
                         ObjectOutputStream o = new ObjectOutputStream(f);
                         o.writeObject(figs);
                         o.flush();
@@ -66,17 +67,12 @@ class ListFrame extends JFrame {
                     
                     int x = evt.getX();
                     int y = evt.getY();
-                    // if (focused != null) {
-                    //    focused.Board = c;
-                 //   }
-                 //   focused=null;
+                
                     
                     for (Figure fig: figs) {
                         if (fig.clicked(x,y)) {
-                            //System.out.println("teste ok.");
                             focused = fig;
                             focus_but=null;
-                            //focused.Board=c;
                             but_clicked=false;
                         }
                     }
@@ -98,12 +94,12 @@ class ListFrame extends JFrame {
             
               if (focused == null && focus_but != null){
                         if (focus_but == buts.get(0)) { 
-                            figs.add(new Rect(mouse.x,mouse.y, 50,50,Color.white,Color.gray));                                                 
-                            
+                            figs.add(new Rect(mouse.x,mouse.y, 50,50,Color.white,Color.gray));                                                
+                            focus_but = null;
                         }
                         else if (focus_but == buts.get(1)) {
                             figs.add(new Ellipse(mouse.x,mouse.y, 50,70,Color.white,Color.gray ));
-                            
+                             focus_but = null;
                         }  
                         
                         else if (focus_but == buts.get(2)) {
@@ -113,10 +109,22 @@ class ListFrame extends JFrame {
                         
                         else if (focus_but == buts.get(3)) {
                             figs.add(new Circulo(mouse.x,mouse.y, 50,50,Color.white,Color.gray ));
-                            
+                             focus_but = null;
+                    
+                     }
+                     
+                      else if (focus_but == buts.get(4)) {
+                            figs.add(new Quadrado(mouse.x,mouse.y, 50,50,Color.white,Color.gray ));
+                             focus_but = null;
                     
                      }
             
+                     
+                     else if (focus_but == buts.get(5)) {
+                            figs.add(new Texto(mouse.x,mouse.y, 50,50,Color.white,Color.gray ));
+                             focus_but = null;
+                    
+                     }
             
                 }
             repaint();
@@ -135,7 +143,7 @@ class ListFrame extends JFrame {
                 }
             );
               
-        this.setTitle("Iterface IVisible");
+        this.setTitle("Projeto 2");
         this.setSize(350, 350);
         
         
@@ -146,7 +154,7 @@ class ListFrame extends JFrame {
                     int x = mouse.x;
                     int y = mouse.y;
                     int w = 96;
-                    int h = 72;
+                    int h = 150;
                     
                     
                     if (evt.getKeyChar() == 'r') {
@@ -168,6 +176,16 @@ class ListFrame extends JFrame {
                         figs.add(new Circulo(x,y, w,h,Color.white, Color.green));
                         
                     }
+                    
+                    else if (evt.getKeyChar() == 'q') {
+                        figs.add(new Quadrado(x,y, w,h,Color.white, Color.green));
+                        
+                    }
+                    
+                    else if (evt.getKeyChar() == 'x') {
+                        figs.add(new Texto(x,y, w,h,Color.white, Color.green));
+                        
+                    }
                    
                     else if (evt.getKeyCode() == KeyEvent.VK_DELETE) {
                         figs.remove(i);}
@@ -183,20 +201,19 @@ class ListFrame extends JFrame {
                     repaint();
                 }
             }
-            );
-                    
+            );  
     }
 
     
     public void paint (Graphics g) {
         super.paint(g);
-        for (Figure fig: this.figs) {
-            fig.paint(g,fig==focused);
+        
         for (Button but: this.buts)  { 
             but.paint(g,but == focus_but);
        }
-    
-        
+        for (Figure fig: this.figs) {
+            fig.paint(g,fig==focused);
+
     }
 }
 }
