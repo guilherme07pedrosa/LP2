@@ -4,9 +4,9 @@ import figures.Figure;
 import java.awt.*;
 
 public class Button implements IVisible {
-    static int SPC = 20;
-    static int DIM = 40;
-    static int PAD = 4;
+    static int SPC = 55;
+    static int DIM = 60;
+    static int PAD = 6;
 
     public  int    idx;
     private Figure fig;
@@ -18,6 +18,7 @@ public class Button implements IVisible {
         this.fig.y = PAD+SPC + idx*DIM;
         this.fig.w = DIM-PAD*2;
         this.fig.h = DIM-PAD*2;
+        
     }
 
     public boolean clicked (int x, int y) {
@@ -32,7 +33,7 @@ public class Button implements IVisible {
 
         g2d.setColor(Color.BLACK);
         g2d.drawRect(SPC, SPC+this.idx*DIM, DIM, DIM);
-
+       
         this.fig.paint(g, false);
     }
 }
