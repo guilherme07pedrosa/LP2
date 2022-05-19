@@ -8,16 +8,22 @@ OBS:
 3) A Figura criada onde o mouse estiver no Frame
 4) Para funcionar o resize, isto é, o redimesionamento das Figuras o mouse deve ser clidado na Figura.
 5) As figuras também pode ser criadas com os botões a esquerda do Frama 
-6) Os botões só aparecem após a criação da primeira figura. 
 
 
-Para criar uma elipse da cor 1- tecle "e"
 
-Para criar um tiângulo da cor 1 - tecle "t"
+Para criar uma elipse - tecle "e"
 
-Para criar uma retangulo da cor 1- tecle "r"
+Para criar um tiângulo da - tecle "t"
 
-Para criar um círculo da cor 1 - tecle "c"
+Para criar uma retangulo - tecle "r"
+
+Para criar um círculo da - tecle "c"
+
+Para criar um quadrado - tecle "q"
+
+Para criar um texto - tecle "x"
+
+
 
 Para deletar a última figura - tecle a tecla "Delete"
 Para arrastar uma figura clique sobre esta
