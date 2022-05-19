@@ -9,10 +9,10 @@ public class Circulo extends Figure {
 
     public Circulo (int x, int y, int w, int h,Color Board, Color Background){
         super(x, y,w,h,Board,Background);
-        this.x=x;
-        this.y=y;
-        this.w=w;
-        this.h=h;
+      //  this.x=x;
+      //  this.y=y;
+      //  this.w=w;
+      //  this.h=h;
             this.Board=Board;
             this.Background=Background;
 
@@ -27,15 +27,15 @@ public class Circulo extends Figure {
         Graphics2D g2d = (Graphics2D) g;
 
         g2d.setColor(Color.white);
-        g2d.fillOval(this.x, this.y, this.w, this.h);
+        g2d.fillOval(this.x, this.y, this.w, this.w);
 
         if (focused){
             g2d.setColor(Color.red);
-            g2d.drawOval(this.x, this.y, this.w,this.h);
+            g2d.drawOval(this.x, this.y, this.w,this.w);
         }
         else {
             g2d.setColor(Color.black);
-            g2d.drawOval(this.x, this.y, this.w, this.h);
+            g2d.drawOval(this.x, this.y, this.w, this.w);
         }
     }
 }
