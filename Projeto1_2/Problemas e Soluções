@@ -1,0 +1,6 @@
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at ListFrame$3.mouseDragged(ListApp.java:139)
+  
+ focused.drag(evt.getX() - mouse.x, evt.getY() - mouse.y);
+ 
+ 
