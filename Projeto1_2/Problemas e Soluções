@@ -1,6 +1,22 @@
+Relato dos problemas e soluções:
+
+2. continua. aperto na janela, movo o mouse pra fora, clico R, exceção
+
+5. esta apagando figura sem o foco (mesmo com outra por cima com o foco)
+
+6. alterar cores?
+
+7. muitas excecoes
 Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
 	at ListFrame$3.mouseDragged(ListApp.java:139)
   
- focused.drag(evt.getX() - mouse.x, evt.getY() - mouse.y);
- 
+Exception in thread "AWT-EventQueue-0" java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+
+
+
+
+8. cria a figura no momento do 1o clique no botao. 1o selecionar a ferramenta, em um 2o clique aplicar a acao
+
+
+9. projeto com bastante problemas
  
