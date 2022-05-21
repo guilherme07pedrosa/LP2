@@ -47,7 +47,7 @@ public class Triangulo extends Figure {
          public void paint (Graphics g, boolean focused) {
         Graphics2D g2d = (Graphics2D) g;
 
-        g2d.setColor(Color.white);
+        g2d.setColor(Color.green);
         g2d.fillPolygon(this.a,this.b, 3);
 
         if (focused){
@@ -55,8 +55,8 @@ public class Triangulo extends Figure {
            g2d.drawPolygon(this.a,this.b, 3);
         }
         else {
-            g2d.setColor(Color.black);
-           g2d.drawPolygon(this.a,this.b, 3);
+            g2d.setColor(Color.green);
+           g2d.fillPolygon(this.a,this.b, 3);
            
         }
 
