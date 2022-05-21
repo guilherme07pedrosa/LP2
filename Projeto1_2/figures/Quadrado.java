@@ -28,7 +28,7 @@ public class Quadrado extends Figure {
        public void paint (Graphics g, boolean focused) {
         Graphics2D g2d = (Graphics2D) g;
 
-        g2d.setColor(Color.white);
+        g2d.setColor(Color.blue);
         g2d.fillRect(this.x, this.y, this.w, this.w);
 
 
@@ -38,8 +38,8 @@ public class Quadrado extends Figure {
             
         }
         else {
-            g2d.setColor(Color.black);
-            g2d.drawRect(this.x, this.y, this.w, this.w);
+            g2d.setColor(Color.blue);
+            g2d.fillRect(this.x, this.y, this.w, this.w);
             
         }
 
