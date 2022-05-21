@@ -28,7 +28,7 @@ public class Texto extends Figure{
        
         
         
-        g2d.drawString("Texto", this.x,this.y);
+        g2d.drawString("\nTexto", this.x,this.y);
     }
 
     public boolean clicked (int ex, int ey) {
