@@ -26,7 +26,7 @@ public class Circulo extends Figure {
        public void paint (Graphics g, boolean focused) {
         Graphics2D g2d = (Graphics2D) g;
 
-        g2d.setColor(Color.white);
+        g2d.setColor(Color.gray);
         g2d.fillOval(this.x, this.y, this.w, this.w);
 
         if (focused){
@@ -34,8 +34,8 @@ public class Circulo extends Figure {
             g2d.drawOval(this.x, this.y, this.w,this.w);
         }
         else {
-            g2d.setColor(Color.black);
-            g2d.drawOval(this.x, this.y, this.w, this.w);
+            g2d.setColor(Color.gray);
+            g2d.fillOval(this.x, this.y, this.w, this.w);
         }
     }
 }
