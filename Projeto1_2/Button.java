@@ -6,7 +6,7 @@ import java.awt.*;
 public class Button implements IVisible {
     static int SPC = 55;
     static int DIM = 60;
-    static int PAD = 6;
+    static int PAD = 15;
 
     public  int    idx;
     private Figure fig;
