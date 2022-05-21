@@ -5,8 +5,44 @@ Resolvido, os dois probelamss de excessão que identifiquei:
 
  - Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
 	at ListFrame$3.mouseDragged(ListApp.java:139)
+	
+	Resolvido com a troca das linhas:
+	this.addMouseMotionListener( 
+            new MouseAdapter() {
+                public void mouseDragged (MouseEvent evt) { 
+                    focused.drag(evt.getX() - mouse.x, evt.getY() - mouse.y);
+                    mouse = getMousePosition();
+                    repaint();
+                    }
+                }
+            );
+	    
+	    por
+	    
+	    this.addMouseMotionListener( 
+            new MouseAdapter() {
+                public void mouseDragged (MouseEvent evt) { 
+                    if (focused !=null){
+                        int dx = evt.getX() - mouse.x;
+                        int dy = evt.getY() - mouse.y;
+                        focused.drag(dx, dy);
+                        repaint();
+                    }
+                    mouse = evt.getPoint();
+                }
+            }
+            );
+	
+	
   
  - Exception in thread "AWT-EventQueue-0" java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+ 	Resolvido com a troca da linha: 
+	else if (evt.getKeyCode() == KeyEvent.VK_DELETE) {
+                        figs.remove(i);}
+	por 
+	
+	else if (evt.getKeyCode() == KeyEvent.VK_DELETE) {
+                        figs.remove(focused);}
 
 
 
