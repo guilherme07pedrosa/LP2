@@ -60,7 +60,10 @@ Exception in thread "AWT-EventQueue-0" java.lang.IndexOutOfBoundsException: Inde
 
 
 8. cria a figura no momento do 1o clique no botao. 1o selecionar a ferramenta, em um 2o clique aplicar a acao
-
+Resolvido com a iserção do comando:
+for (Button but:buts) {
+                        if(but.clicked(x,y)){ 
+                            JOptionPane.showConfirmDialog(null, "Deseja realmante criar essa figura");
 
 9. projeto com bastante problemas
  
