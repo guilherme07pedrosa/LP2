@@ -28,7 +28,7 @@ public class Ellipse extends Figure {
         public void paint (Graphics g, boolean focused) {
         Graphics2D g2d = (Graphics2D) g;
 
-        g2d.setColor(Color.white);
+        g2d.setColor(Color.black);
         g2d.fillOval(this.x, this.y, this.w, this.h);
 
         if (focused){
@@ -37,7 +37,7 @@ public class Ellipse extends Figure {
         }
         else {
             g2d.setColor(Color.black);
-            g2d.drawOval(this.x, this.y, this.w, this.h);
+            g2d.fillOval(this.x, this.y, this.w, this.h);
         }
 
     }
