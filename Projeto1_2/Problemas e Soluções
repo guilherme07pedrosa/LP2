@@ -1,15 +1,22 @@
 Relato dos problemas e soluções:
 
 2. continua. aperto na janela, movo o mouse pra fora, clico R, exceção]
-Resolvido. Asssim como o 7
+Resolvido, os dois probelamss de excessão que identifiquei:
+
+ - Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at ListFrame$3.mouseDragged(ListApp.java:139)
+  
+ - Exception in thread "AWT-EventQueue-0" java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+
+
 
 5. esta apagando figura sem o foco (mesmo com outra por cima com o foco)
+Não identifiquei esse problema. As figuras são colocadas uma sobre a outra apagando a que está mais embaixo.
 
 6. alterar cores?
 
 7. muitas excecoes
-Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
-	at ListFrame$3.mouseDragged(ListApp.java:139)
+Resolvido. 
   
 Exception in thread "AWT-EventQueue-0" java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
 
