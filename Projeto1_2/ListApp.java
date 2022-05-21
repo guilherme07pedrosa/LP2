@@ -94,7 +94,7 @@ class ListFrame extends JFrame {
             
               if (focused == null && focus_but != null){
                         if (focus_but == buts.get(0)) { 
-                            figs.add(new Rect(mouse.x,mouse.y, 50,50,Color.white,Color.gray));                                                
+                            figs.add(new Rect(mouse.x,mouse.y, 50,100,Color.white,Color.gray));                                                
                             focus_but = null;
                         }
                         else if (focus_but == buts.get(1)) {
@@ -103,7 +103,7 @@ class ListFrame extends JFrame {
                         }  
                         
                         else if (focus_but == buts.get(2)) {
-                            figs.add(new Triangulo(mouse.x,mouse.y, 100,100,Color.white,Color.gray ));
+                            figs.add(new Triangulo(mouse.x,mouse.y, 150,150,Color.white,Color.gray ));
                             
                         }
                         
@@ -136,16 +136,20 @@ class ListFrame extends JFrame {
         this.addMouseMotionListener( 
             new MouseAdapter() {
                 public void mouseDragged (MouseEvent evt) { 
-                    focused.drag(evt.getX() - mouse.x, evt.getY() - mouse.y);
-                    mouse = getMousePosition();
-                    repaint();
+                    if (focused !=null){
+                        int dx = evt.getX() - mouse.x;
+                        int dy = evt.getY() - mouse.y;
+                        focused.drag(dx, dy);
+                        repaint();
                     }
+                    mouse = evt.getPoint();
                 }
+            }
             );
               
         this.setTitle("Projeto 2");
         this.setSize(350, 350);
-        
+         
         
         this.addKeyListener (
             new KeyAdapter() {
@@ -155,6 +159,7 @@ class ListFrame extends JFrame {
                     int y = mouse.y;
                     int w = 96;
                     int h = 150;
+        
                     
                     
                     if (evt.getKeyChar() == 'r') {
@@ -188,7 +193,7 @@ class ListFrame extends JFrame {
                     }
                    
                     else if (evt.getKeyCode() == KeyEvent.VK_DELETE) {
-                        figs.remove(i);}
+                        figs.remove(focused);}
                     
                     else if (evt.getKeyCode() == KeyEvent.VK_UP){
                             focused.resize(5, 5);
@@ -197,6 +202,9 @@ class ListFrame extends JFrame {
                             focused.resize(-5, -5);
                         }
                     
+                   // else if (evt.getKeyCode() == 'd') {
+                    //    figs.remove(i);}
+                    
                     
                     repaint();
                 }
@@ -204,7 +212,7 @@ class ListFrame extends JFrame {
             );  
     }
 
-    
+
     public void paint (Graphics g) {
         super.paint(g);
         
