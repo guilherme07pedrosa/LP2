@@ -12,7 +12,7 @@ public abstract class Figure implements IVisible, Serializable {
     public int x, y;
     public int w, h;
         public Color Board, Background ;
-        Color colorList[] = { Color.BLUE, Color.CYAN, Color.DARK_GRAY,};
+        Color colorList[] = { Color.BLUE, Color.GREEN,};
         Random rand = new Random();
     
   
@@ -45,9 +45,20 @@ public abstract class Figure implements IVisible, Serializable {
         
     }
     
-    
+    public void changing_Board(Color BLUE, Color GREEN){
+        if (this.Board==Color.BLUE){
+         this.Board=Color.GREEN;}
+       else if (this.Board==Color.GREEN){
+         this.Board=Color.BLUE;}
+    }
+
+    public void changing_Background(Color BLUE, Color GREEN){
+        if (this.Board==Color.BLUE){
+         this.Board=Color.GREEN;}
+       else if (this.Board==Color.GREEN){
+         this.Board=Color.BLUE;}
         
-    
+         }
     
     public abstract void paint (Graphics g, boolean focused);
     }
