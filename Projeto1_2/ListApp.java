@@ -16,11 +16,13 @@ class ListApp {
 class ListFrame extends JFrame {
     ArrayList<Figure> figs = new ArrayList<Figure>();
     ArrayList<Button> buts = new ArrayList<Button>();
+    Random rand = new Random();
     int i;
     Figure focused = null;
     Point mouse=null;
     Button focus_but;
     boolean but_clicked=false;
+    Color colorList[] = { Color.BLUE, Color.CYAN, Color.DARK_GRAY,};
    
 
     ListFrame () {
@@ -76,15 +78,21 @@ class ListFrame extends JFrame {
                             but_clicked=false;
                         }
                     }
-                    //Foco Z, a cor da última figura sempre clicada sempre vai prevalecer quando colocada em cima das outras
-                    if (focused != null) {
+                   // Foco Z, a cor da última figura sempre clicada sempre vai prevalecer quando colocada em cima das outras
+                    
+                   
+                   if (focused != null) {
                        figs.remove(focused);
                        figs.add(focused);
                         }
                     
+                        
+                       
+                        
+                        
                     for (Button but:buts) {
                         if(but.clicked(x,y)){ 
-                            JOptionPane.showConfirmDialog(null, "Deseja realmante criar essa figura");
+                            //JOptionPane.showConfirmDialog(null, "Deseja realmante criar essa figura");
                             //System.out.println("teste ok.");
                             focus_but = but;
                             focused = null;
@@ -104,7 +112,7 @@ class ListFrame extends JFrame {
                         }  
                         
                         else if (focus_but == buts.get(2)) {
-                            figs.add(new Triangulo(mouse.x+350,mouse.y, 50,50,Color.white,Color.gray ));
+                            figs.add(new Triangulo(mouse.x+350,mouse.y, 50,50,colorList[rand.nextInt(3)], colorList[rand.nextInt(3)] ));
                             
                         }
                         
@@ -115,7 +123,7 @@ class ListFrame extends JFrame {
                      }
                      
                       else if (focus_but == buts.get(4)) {
-                            figs.add(new Quadrado(mouse.x+650,mouse.y, 50,50,Color.white,Color.gray ));
+                            figs.add(new Quadrado(mouse.x+650,mouse.y, 50,50,colorList[rand.nextInt(3)], colorList[rand.nextInt(3)] ));
                              focus_but = null;
                     
                      }
@@ -149,7 +157,7 @@ class ListFrame extends JFrame {
             );
               
         this.setTitle("Projeto 2");
-        this.setSize(350, 350);
+        this.setPreferredSize(new Dimension(1024, 720));
          
         
         this.addKeyListener (
@@ -160,11 +168,13 @@ class ListFrame extends JFrame {
                     int y = mouse.y;
                     int w = 50;
                     int h = 50;
+                    Color Board= Color.white;
+                    Color Background=Color.black;
         
                     
                     
                     if (evt.getKeyChar() == 'r') {
-                        figs.add(new Rect(x,y, w,h+20,Color.white,Color.black));
+                        figs.add(new Rect(x,y, w,h+20,Board ,Background));
                         
                     } 
                  
@@ -175,7 +185,7 @@ class ListFrame extends JFrame {
                     }
                     
                     else if (evt.getKeyChar() == 't') {
-                        figs.add(new Triangulo(x,y, w,h,Color.white,Color.blue));
+                        figs.add(new Triangulo(x,y, w,h,colorList[rand.nextInt(3)], colorList[rand.nextInt(3)]));
                     }
                     
                     else if (evt.getKeyChar() == 'c') {
@@ -184,7 +194,7 @@ class ListFrame extends JFrame {
                     }
                     
                     else if (evt.getKeyChar() == 'q') {
-                        figs.add(new Quadrado(x,y, w,h,Color.white, Color.green));
+                        figs.add(new Quadrado(x,y, w,h,colorList[rand.nextInt(3)], colorList[rand.nextInt(3)]));
                         
                     }
                     
@@ -193,8 +203,11 @@ class ListFrame extends JFrame {
                         
                     }
                    
+                                                                        
+                                                                        
                     else if (evt.getKeyCode() == KeyEvent.VK_DELETE) {
                         figs.remove(focused);}
+                        
                     
                     else if (evt.getKeyCode() == KeyEvent.VK_UP){
                             focused.resize(5, 5);
