@@ -95,34 +95,34 @@ class ListFrame extends JFrame {
             
               if (focused == null && focus_but != null){
                         if (focus_but == buts.get(0)) { 
-                            figs.add(new Rect(mouse.x,mouse.y, 50,100,Color.white,Color.gray));                                                
+                            figs.add(new Rect(mouse.x+150, mouse.y, 50,70,Color.white,Color.gray));                                                
                             focus_but = null;
                         }
                         else if (focus_but == buts.get(1)) {
-                            figs.add(new Ellipse(mouse.x,mouse.y, 50,70,Color.white,Color.gray ));
+                            figs.add(new Ellipse(mouse.x+300,mouse.y, 50,70,Color.white,Color.gray ));
                              focus_but = null;
                         }  
                         
                         else if (focus_but == buts.get(2)) {
-                            figs.add(new Triangulo(mouse.x,mouse.y, 150,150,Color.white,Color.gray ));
+                            figs.add(new Triangulo(mouse.x+350,mouse.y, 50,50,Color.white,Color.gray ));
                             
                         }
                         
                         else if (focus_but == buts.get(3)) {
-                            figs.add(new Circulo(mouse.x,mouse.y, 50,50,Color.white,Color.gray ));
+                            figs.add(new Circulo(mouse.x+500,mouse.y, 50,50,Color.white,Color.gray ));
                              focus_but = null;
                     
                      }
                      
                       else if (focus_but == buts.get(4)) {
-                            figs.add(new Quadrado(mouse.x,mouse.y, 50,50,Color.white,Color.gray ));
+                            figs.add(new Quadrado(mouse.x+650,mouse.y, 50,50,Color.white,Color.gray ));
                              focus_but = null;
                     
                      }
             
                      
                      else if (focus_but == buts.get(5)) {
-                            figs.add(new Texto(mouse.x,mouse.y, 50,50,Color.white,Color.gray ));
+                            figs.add(new Texto(mouse.x+800,mouse.y, 50,50,Color.white,Color.gray ));
                              focus_but = null;
                     
                      }
@@ -158,18 +158,18 @@ class ListFrame extends JFrame {
                     mouse = getMousePosition();
                     int x = mouse.x;
                     int y = mouse.y;
-                    int w = 96;
-                    int h = 150;
+                    int w = 50;
+                    int h = 50;
         
                     
                     
                     if (evt.getKeyChar() == 'r') {
-                        figs.add(new Rect(x,y, w,h,Color.white,Color.black));
+                        figs.add(new Rect(x,y, w,h+20,Color.white,Color.black));
                         
                     } 
                  
                     else if (evt.getKeyChar() == 'e') {
-                        figs.add(new Ellipse(x,y, w,h,Color.white,Color.yellow  ));
+                        figs.add(new Ellipse(x,y, w,h+20,Color.white,Color.yellow  ));
 
                         
                     }
