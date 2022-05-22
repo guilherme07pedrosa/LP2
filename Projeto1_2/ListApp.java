@@ -22,8 +22,8 @@ class ListFrame extends JFrame {
     Point mouse=null;
     Button focus_but;
     boolean but_clicked=false;
-    Color colorList[] = { Color.BLUE, Color.CYAN, Color.DARK_GRAY,};
-   
+    Color colorList[] =  { Color.BLUE, Color.GREEN};
+    Color Board, Background;
 
     ListFrame () {
         buts.add(new Button(2, new Rect(0, 0, 0, 0,Color.white,Color.gray))); 
@@ -84,6 +84,7 @@ class ListFrame extends JFrame {
                    if (focused != null) {
                        figs.remove(focused);
                        figs.add(focused);
+                       
                         }
                     
                         
@@ -92,8 +93,9 @@ class ListFrame extends JFrame {
                         
                     for (Button but:buts) {
                         if(but.clicked(x,y)){ 
-                            //JOptionPane.showConfirmDialog(null, "Deseja realmante criar essa figura");
-                            //System.out.println("teste ok.");
+                            JOptionPane.showMessageDialog(null, "deseja criar essa figura?");
+                            JOptionPane.showConfirmDialog(null, "clique para confirmar", "figura",
+                            JOptionPane.YES_NO_OPTION);
                             focus_but = but;
                             focused = null;
                             but_clicked = true;
@@ -103,34 +105,34 @@ class ListFrame extends JFrame {
             
               if (focused == null && focus_but != null){
                         if (focus_but == buts.get(0)) { 
-                            figs.add(new Rect(mouse.x+150, mouse.y, 50,70,Color.white,Color.gray));                                                
+                            figs.add(new Rect(mouse.x+150, mouse.y, 50,70,colorList[rand.nextInt(1)], colorList[rand.nextInt(1)]));                                                
                             focus_but = null;
                         }
                         else if (focus_but == buts.get(1)) {
-                            figs.add(new Ellipse(mouse.x+300,mouse.y, 50,70,Color.white,Color.gray ));
+                            figs.add(new Ellipse(mouse.x+300,mouse.y, 50,70,colorList[rand.nextInt(1)], colorList[rand.nextInt(1)]));
                              focus_but = null;
                         }  
                         
                         else if (focus_but == buts.get(2)) {
-                            figs.add(new Triangulo(mouse.x+350,mouse.y, 50,50,colorList[rand.nextInt(3)], colorList[rand.nextInt(3)] ));
+                            figs.add(new Triangulo(mouse.x+350,mouse.y, 50,50,colorList[rand.nextInt(1)], colorList[rand.nextInt(1)] ));
                             
                         }
                         
                         else if (focus_but == buts.get(3)) {
-                            figs.add(new Circulo(mouse.x+500,mouse.y, 50,50,Color.white,Color.gray ));
+                            figs.add(new Circulo(mouse.x+500,mouse.y, 50,50,colorList[rand.nextInt(1)], colorList[rand.nextInt(1)] ));
                              focus_but = null;
                     
                      }
                      
                       else if (focus_but == buts.get(4)) {
-                            figs.add(new Quadrado(mouse.x+650,mouse.y, 50,50,colorList[rand.nextInt(3)], colorList[rand.nextInt(3)] ));
+                            figs.add(new Quadrado(mouse.x+650,mouse.y, 50,50,colorList[rand.nextInt(1)], colorList[rand.nextInt(1)] ));
                              focus_but = null;
                     
                      }
             
                      
                      else if (focus_but == buts.get(5)) {
-                            figs.add(new Texto(mouse.x+800,mouse.y, 50,50,Color.white,Color.gray ));
+                            figs.add(new Texto(mouse.x+800,mouse.y, 50,50,colorList[rand.nextInt(1)], colorList[rand.nextInt(1)] ));
                              focus_but = null;
                     
                      }
@@ -168,42 +170,47 @@ class ListFrame extends JFrame {
                     int y = mouse.y;
                     int w = 50;
                     int h = 50;
-                    Color Board= Color.white;
-                    Color Background=Color.black;
+                    Color  Board= colorList[rand.nextInt(1)];
+                    Color Background=colorList[rand.nextInt(1)];
         
                     
                     
                     if (evt.getKeyChar() == 'r') {
-                        figs.add(new Rect(x,y, w,h+20,Board ,Background));
+                        figs.add(new Rect(x,y, w,h+20,Board, Background));
                         
                     } 
                  
                     else if (evt.getKeyChar() == 'e') {
-                        figs.add(new Ellipse(x,y, w,h+20,Color.white,Color.yellow  ));
+                        figs.add(new Ellipse(x,y, w,h+20,Board, Background));
 
                         
                     }
                     
                     else if (evt.getKeyChar() == 't') {
-                        figs.add(new Triangulo(x,y, w,h,colorList[rand.nextInt(3)], colorList[rand.nextInt(3)]));
+                        figs.add(new Triangulo(x,y, w,h,Board, Background));
                     }
                     
                     else if (evt.getKeyChar() == 'c') {
-                        figs.add(new Circulo(x,y, w,h,Color.white, Color.green));
+                        figs.add(new Circulo(x,y, w,h,Board, Background));
                         
                     }
                     
                     else if (evt.getKeyChar() == 'q') {
-                        figs.add(new Quadrado(x,y, w,h,colorList[rand.nextInt(3)], colorList[rand.nextInt(3)]));
+                        figs.add(new Quadrado(x,y, w,h,Board, Background));
                         
                     }
                     
                     else if (evt.getKeyChar() == 'x') {
-                        figs.add(new Texto(x,y, w,h,Color.white, Color.green));
+                        figs.add(new Texto(x,y, w,h,Board, Background));
                         
                     }
-                   
-                                                                        
+                    
+                    
+                                   
+                    else if (evt.getKeyChar() == 'z') {
+                        focused.changing_Background(Color.BLUE, Color.GREEN);
+                        
+                    }                                                   
                                                                         
                     else if (evt.getKeyCode() == KeyEvent.VK_DELETE) {
                         figs.remove(focused);}
@@ -215,9 +222,9 @@ class ListFrame extends JFrame {
                     else if (evt.getKeyCode() == KeyEvent.VK_DOWN){
                             focused.resize(-5, -5);
                         }
+                        
                     
-                   // else if (evt.getKeyCode() == 'd') {
-                    //    figs.remove(i);}
+                   
                     
                     
                     repaint();
