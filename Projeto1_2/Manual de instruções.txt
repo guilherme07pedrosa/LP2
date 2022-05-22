@@ -7,7 +7,8 @@ OBS:
 2)O triângulo ser clicado um pouco deslocado do centro para esquerda e para baixo. 
 3) A Figura criada onde o mouse estiver no Frame
 4) Para funcionar o resize, isto é, o redimesionamento das Figuras o mouse deve ser clidado na Figura.
-5) As figuras também pode ser criadas com os botões a esquerda do Frama 
+5) As figuras também pode ser criadas com os botões a esquerda do Frame
+
 
 
 
@@ -23,9 +24,11 @@ Para criar um quadrado - tecle "q"
 
 Para criar um texto - tecle "x"
 
+Para alterar a cor da Figura - tecle "z"
 
 
-Para deletar a última figura - tecle a tecla "Delete"
+
+Para deletar a figura clique sobre a mesma e - tecle a tecla "Delete"
 Para arrastar uma figura clique sobre esta
 Para aumentar o tamanho clique na tecla  "PgUp" (seta para cima)
 Para diminuir o tamanho clique na tecla "PgDn" (seta para baixo)
