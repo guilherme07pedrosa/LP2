@@ -6,11 +6,15 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import ivisible.IVisible;
+import java.util.*;
 
 public abstract class Figure implements IVisible, Serializable {
     public int x, y;
     public int w, h;
         public Color Board, Background ;
+        Color colorList[] = { Color.BLUE, Color.CYAN, Color.DARK_GRAY,};
+        Random rand = new Random();
+    
   
     public Figure(int x, int y, int w, int h,Color Board, Color Background){
         this.x=x;
