@@ -77,6 +77,20 @@ para:
         }
 
 6. alterar cores?
+RESOLVIDO com a criação do método na classe Figure
+public void changing_Background(Color BLUE, Color GREEN){
+        if (this.Board==Color.BLUE){
+         this.Board=Color.GREEN;}
+       else if (this.Board==Color.GREEN){
+         this.Board=Color.BLUE;}
+        
+         }
+ E invovocação deste método na classe ListApp
+ else if (evt.getKeyChar() == 'z') {
+                        focused.changing_Background(Color.BLUE, Color.GREEN);
+                        
+                    } 
+
 
 7. muitas excecoes
 Resolvido. 
@@ -87,10 +101,10 @@ Exception in thread "AWT-EventQueue-0" java.lang.IndexOutOfBoundsException: Inde
 
 
 8. cria a figura no momento do 1o clique no botao. 1o selecionar a ferramenta, em um 2o clique aplicar a acao
-Resolvido com a iserção do comando:
-for (Button but:buts) {
-                        if(but.clicked(x,y)){ 
-                            JOptionPane.showConfirmDialog(null, "Deseja realmante criar essa figura");
+RESOLVIDO  com a inserção do comando:
+JOptionPane.showMessageDialog(null, "deseja criar essa figura?");
+JOptionPane.showConfirmDialog(null, "clique para confirmar", "figura",
+JOptionPane.YES_NO_OPTION);
 
 9. projeto com bastante problemas
  
