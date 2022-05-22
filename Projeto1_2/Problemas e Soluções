@@ -95,7 +95,7 @@ public void changing_Background(Color BLUE, Color GREEN){
 7. muitas excecoes
 Resolvido. 
   
-Exception in thread "AWT-EventQueue-0" java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+
 
 
 
