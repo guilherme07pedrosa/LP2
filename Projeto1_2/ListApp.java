@@ -93,9 +93,7 @@ class ListFrame extends JFrame {
                         
                     for (Button but:buts) {
                         if(but.clicked(x,y)){ 
-                            JOptionPane.showMessageDialog(null, "deseja criar essa figura?");
-                            JOptionPane.showConfirmDialog(null, "clique para confirmar", "figura",
-                            JOptionPane.YES_NO_OPTION);
+                            JOptionPane.showMessageDialog(null, "A figura foi criada se desejar deletar aperte a tecla delete");
                             focus_but = but;
                             focused = null;
                             but_clicked = true;
