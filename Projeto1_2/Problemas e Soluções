@@ -102,9 +102,7 @@ Resolvido.
 
 8. cria a figura no momento do 1o clique no botao. 1o selecionar a ferramenta, em um 2o clique aplicar a acao
 RESOLVIDO  com a inserção do comando:
-JOptionPane.showMessageDialog(null, "deseja criar essa figura?");
-JOptionPane.showConfirmDialog(null, "clique para confirmar", "figura",
-JOptionPane.YES_NO_OPTION);
+JOptionPane.showMessageDialog(null, "A figura foi criada se desejar deletar aperte a tecla delete");
 
 9. projeto com bastante problemas
  
